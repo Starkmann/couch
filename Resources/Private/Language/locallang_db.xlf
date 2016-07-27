@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2016-06-06T13:25:21Z" product-name="couch">
+		<header/>
+		<body>
+			<trans-unit id="tx_couch_domain_model_couch">
+				<source>Angebot</source>
+			</trans-unit>
+			<trans-unit id="tx_couch_domain_model_couch.description">
+				<source>Beschreibung</source>
+			</trans-unit>
+			<trans-unit id="tx_couch_domain_model_couch.begin">
+				<source>Form</source>
+			</trans-unit>
+			<trans-unit id="tx_couch_domain_model_couch.end">
+				<source>To</source>
+			</trans-unit>
+			<trans-unit id="tx_couch_domain_model_couch.space">
+				<source>Space</source>
+			</trans-unit>
+			<trans-unit id="tx_couch_domain_model_couch.provider">
+				<source>Host</source>
+			</trans-unit>
+			<trans-unit id="tx_couch_domain_model_couch.address">
+				<source>Address</source>
+			</trans-unit>
+			<trans-unit id="tx_couch_domain_model_feuser">
+				<source>Fe User</source>
+			</trans-unit>
+			<trans-unit id="fe_users.tx_extbase_type.Tx_Couch_FeUser">
+				<source>Couch FeUser</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

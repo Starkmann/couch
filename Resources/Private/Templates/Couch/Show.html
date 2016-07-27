@@ -1,0 +1,41 @@
+{namespace u=Eike\Couch\ViewHelpers}
+<f:layout name="Default" />
+
+This Template is responsible for displaying a single view for a domain object
+
+If you modify this template, do not forget to change the overwrite settings
+in /Configuration/ExtensionBuilder/settings.yaml:
+  Resources:
+    Private:
+      Templates:
+        Show.html: keep
+
+Otherwise your changes will be overwritten the next time you save the extension in the extension builder
+
+<f:section name="main">
+<h1>Mitfahrgelegenheiten</h1>
+
+<f:flashMessages />
+<div id="map" style="width: 490px; height: 620px"></div>
+<script>
+	var map = L.map('map').setView([{settings.latitude}, {settings.longitude}], {settings.mapZoom});
+
+
+	<u:mapBoxTileLayer 
+		id="{settings.id}" 
+		accesssToken="{settings.accessToken}" 
+		maxZoom="{settings.maxZoom}" 
+		attribution="Map data &copy; <a href=\"http://openstreetmap.org\">OpenStreetMap</a> contributors, <a href=\"http://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA</a>, Imagery © <a href=\"http://mapbox.com\">Mapbox</a>">
+	</u:mapBoxTileLayer> 
+	
+	<f:if condition="{couch.address.latitude}">
+		<f:if condition="{couch.address.longitude}">
+			L.marker([{couch.address.latitude}, {couch.address.longitude}]).addTo(map)
+			.bindPopup('<b>{couch.provider.username} ({couch.address.name})</b>')
+		</f:if>
+	</f:if>
+</script>
+<f:render partial="Couch/Properties" arguments="{couch:couch}" />
+<f:link.action action="list"><span class="btn">Zurück zur Liste</span></f:link.action>&nbsp;
+<f:link.action action="new"><span class="btn">Neuen Eintrag erstellen</span></f:link.action>
+</f:section>

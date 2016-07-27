@@ -1,0 +1,54 @@
+
+plugin.tx_couch_list {
+	view {
+		templateRootPaths.0 = {$plugin.tx_couch_list.view.templateRootPath}
+		partialRootPaths.0 = {$plugin.tx_couch_list.view.partialRootPath}
+		layoutRootPaths.0 = {$plugin.tx_couch_list.view.layoutRootPath}
+	}
+	persistence {
+		storagePid = {$plugin.tx_couch_list.persistence.storagePid}
+	}
+}
+
+page.includeCSS.tx_couch_leaflet = EXT:couch/Resources/Public/Css/leaflet.css
+page.includeJS.tx_couch_leaflet = EXT:couch/Resources/Public/Scripts/leaflet.js
+page.includeJS.tx_couch_leaflet_routing = EXT:couch/Resources/Public/Scripts/leaflet-routing-machine.js
+page.includeCSS.tx_couch_leaflet_routing = EXT:couch/Resources/Public/Css/leaflet-routing-machine.css
+
+page.includeJSFooter.tx_couch_datetimepicker = EXT:couch/Resources/Public/Scripts/jquery.datetimepicker.full.js
+page.includeJSFooter.tx_couch_datetimepicker_init = EXT:couch/Resources/Public/Scripts/DatePicker.js
+page.includeCSS.tx_couch_datetimepicker = EXT:couch/Resources/Public/Css/jquery.datetimepicker.min.css
+
+plugin.tx_couch._CSS_DEFAULT_STYLE (
+	textarea.f3-form-error {
+		background-color:#FF9F9F;
+		border: 1px #FF0000 solid;
+	}
+
+	input.f3-form-error {
+		background-color:#FF9F9F;
+		border: 1px #FF0000 solid;
+	}
+
+	.tx-couch table {
+		border-collapse:separate;
+		border-spacing:10px;
+	}
+
+	.tx-couch table th {
+		font-weight:bold;
+	}
+
+	.tx-couch table td {
+		vertical-align:top;
+	}
+
+	.typo3-messages .message-error {
+		color:red;
+	}
+
+	.typo3-messages .message-ok {
+		color:green;
+	}
+
+)

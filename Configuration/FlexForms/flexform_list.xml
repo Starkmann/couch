@@ -1,0 +1,124 @@
+<T3DataStructure>
+	<sheets>
+		<sDEF>
+			<ROOT>
+				<TCEforms>
+					<sheetTitle>Function</sheetTitle>
+				</TCEforms>
+				<type>array</type>
+				<el>
+					<switchableControllerActions>
+						<TCEforms>
+							<label>Select function</label>
+							<config>
+								<type>select</type>
+								<items>
+									<numIndex index="0">
+										<numIndex index="0">List</numIndex>
+										<numIndex index="1">Couch->list;Couch->show;Couch->new;Couch->create;Couch->edit;Couch->update;Couch->delete</numIndex>
+									</numIndex>
+									<numIndex index="1">
+										<numIndex index="0">Show</numIndex>
+										<numIndex index="1">Couch->show;Couch->new;Couch->create;Couch->edit;Couch->update;Couch->delete</numIndex>
+									</numIndex>
+								</items>
+							</config>
+						</TCEforms>
+					</switchableControllerActions>
+					<settings.category>
+						<TCEforms>
+							<label>Category</label>
+							<config>
+							  <type>select</type>
+							  <size>10</size>
+							  <maxitem>1</maxitem>
+							  <minitem>1</minitem>
+							  <renderType>selectTree</renderType>
+							  <foreign_table>sys_category</foreign_table>
+							</config>
+						</TCEforms>
+					</settings.category>
+					<settings.registrationPid>
+						<TCEforms>
+							<label>Registrierung</label>
+							<config>
+							  <type>group</type>
+							  <internal_type>db</internal_type>
+							  <allowed>pages</allowed>
+							</config>
+						</TCEforms>
+					</settings.registrationPid>
+					<settings.maxZoom>
+					    <TCEforms>
+					      <label>Maximale Zoomstufe (Default: 16)</label>
+					      <config>
+						<type>input</type>
+					      </config>
+					    </TCEforms>
+					 </settings.maxZoom>	
+					  
+					  <settings.mapZoom>
+					    <TCEforms>
+					      <label>Zoomstufe</label>
+					      <config>
+						<type>input</type>
+					      </config>
+					    </TCEforms>
+					  </settings.mapZoom>
+					  
+					  <settings.latitude>
+					    <TCEforms>
+					      <label>Latitude</label>
+					      <config>
+						<type>input</type>
+					      </config>
+					    </TCEforms>
+					  </settings.latitude>
+					  
+					  <settings.longitude>
+					    <TCEforms>
+					      <label>Longitude</label>
+					      <config>
+						<type>input</type>
+					      </config>
+					    </TCEforms>
+					  </settings.longitude>
+					  
+					  <settings.accessToken>
+					    <TCEforms>
+					      <label>Access Token (mapbox)</label>
+					      <config>
+						<type>input</type>
+					      </config>
+					    </TCEforms>
+					  </settings.accessToken>
+					  
+					  <settings.id>
+					    <TCEforms>
+					      <label>Id (mapbox)</label>
+					      <config>
+						<type>input</type>
+					      </config>
+					    </TCEforms>
+					  </settings.id>
+					  <settings.mapWidth>
+					    <TCEforms>
+					      <label>Map Width (Default: 500px)</label>
+					      <config>
+						<type>input</type>
+					      </config>
+					    </TCEforms>
+					  </settings.mapWidth>
+						<settings.mapHeight>
+					    <TCEforms>
+					      <label>Map Height (Default: 800px)</label>
+					      <config>
+						<type>input</type>
+					      </config>
+					    </TCEforms>
+					  </settings.mapHeight>
+				</el>
+			</ROOT>
+		</sDEF>
+	</sheets>
+</T3DataStructure>

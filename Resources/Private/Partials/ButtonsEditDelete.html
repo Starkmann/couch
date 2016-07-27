@@ -1,0 +1,7 @@
+{namespace u=Eike\Couch\ViewHelpers}
+<u:access.mayEditObject couch="{couch}" user="{feUser}">
+	<div class="couchLinks">
+		<f:link.action action="edit" arguments="{couch : couch}">Edit</f:link.action>
+		<f:link.action action="delete" arguments="{couch : couch}">Delete</f:link.action>
+	</div>
+</u:access.mayEditObject>

@@ -1,0 +1,41 @@
+
+<table class="table table-hover" >
+	<tr>
+		<td>
+			<f:translate key="tx_couch_domain_model_couch.description" />
+		</td>
+		<td>
+		{couch.description}
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<f:translate key="tx_couch_domain_model_couch.begin" />
+		</td>
+		<td>
+		{couch.begin -> f:format.date()}
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<f:translate key="tx_couch_domain_model_couch.end" />
+		</td>
+		<td>
+		{couch.begin -> f:format.date()}
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<f:translate key="tx_couch_domain_model_couch.space" />
+		</td>
+		<td>
+		{couch.space}
+		</td>
+	</tr>
+</table>
+
+{couch.address.name} <br>
+{couch.address.street}<br>
+{couch.address.streetNumber}<br>
+{couch.address.zip}<br>
+{couch.address.city}<br>

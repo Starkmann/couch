@@ -1,0 +1,99 @@
+{namespace u=Eike\Couch\ViewHelpers}
+<f:layout name="Default" />
+
+This Template is responsible for creating a table of domain objects.
+
+If you modify this template, do not forget to change the overwrite settings
+in /Configuration/ExtensionBuilder/settings.yaml:
+  Resources:
+    Private:
+      Templates:
+        List.html: keep
+
+Otherwise your changes will be overwritten the next time you save the extension in the extension builder
+
+<f:section name="main">
+<h1>Mitfahrgelegenheiten nach {destination.name}</h1>
+
+<f:flashMessages />
+<div id="map" style="width: 490px; height: 620px"></div>
+<script>
+	var map = L.map('map').setView([{settings.latitude}, {settings.longitude}], {settings.mapZoom});
+
+
+	<u:mapBoxTileLayer 
+		id="{settings.id}" 
+		accesssToken="{settings.accessToken}" 
+		maxZoom="{settings.maxZoom}" 
+		attribution="Map data &copy; <a href=\"http://openstreetmap.org\">OpenStreetMap</a> contributors, <a href=\"http://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA</a>, Imagery © <a href=\"http://mapbox.com\">Mapbox</a>">
+	</u:mapBoxTileLayer> 
+	
+	<f:for each="{couchs}" as="couch">
+		<f:if condition="{couch.address.latitude}">
+			<f:if condition="{couch.address.longitude}">
+				L.marker([{couch.address.latitude}, {couch.address.longitude}]).addTo(map)
+				.bindPopup('<b><f:link.action action="show" arguments="{couch : couch}">{couch.provider.username} ({couch.address.name})</f:link.action> </b>')
+			</f:if>
+		</f:if>
+	</f:for>
+
+</script>
+
+<f:if condition="{couchs}">
+<p>
+	<table class="table table-striped">
+	    <thead>
+                <tr>
+                  <th>Address name</th>
+                  <th>Beschreibung</th>
+                  <th>Stadt</th>
+                  <th>Begin</th>
+                  <th>End</th>
+                  <th>#</th>
+                </tr>
+            </thead>
+            <tbody>
+	<f:for each="{couchs}" as="couch">
+		
+		 
+            <tr>
+            <td>
+			     {couch.address.name}
+			 </td>
+			 <td>
+			     {couch.description}
+			 </td>
+			 <td>
+			     {couch.address.city}
+			 </td>
+			 <td>
+			     {couch.begin-> f:format.date(format:'Y/m/d H:i')}
+			 </td>
+			  <td>
+			     {couch.end -> f:format.date(format:'Y/m/d H:i')}
+			 </td>
+			 <td>
+			     <f:link.action action="show" arguments="{couch : couch}"><span class="btn btn-small">Eintrag ansehen</span> </f:link.action>
+			 </td>
+			 <td>
+			 	<f:render partial="ButtonsEditDelete" arguments="{couch : couch, feUser:feUser}" />
+			 </td>
+			 </tr>
+			 </tbody>
+				
+		</li>
+	</f:for>
+	</table>
+</p>
+</f:if>
+<f:if condition="{feUser}">
+	<f:then>
+		<f:link.action action="new"><span class="btn">Neuen Eintrag erstellen</span></f:link.action>
+	</f:then>
+	<f:else>
+		<f:if condition="{settings.registrationPid}">
+			<f:link.page pageUid="{settings.registrationPid}">Regster to post an couch</f:link.page>
+		</f:if>
+	</f:else>
+</f:if>
+</f:section>

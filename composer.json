@@ -1,0 +1,23 @@
+{
+    "name": "eike/couch",
+    "description": "Manages couchs",
+    "type": "typo3-cms-extension",
+    "version": "1.0.0",
+    "replace": {
+        "couch": "self.version" 
+    },
+    "require": {
+        "typo3/cms-core": "~7.6" 
+    },
+    "autoload": {
+        "psr-4": {
+            "Eike\\Couch\\": "Classes" 
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Eike\\Couch\\Tests": "Tests/" 
+        }
+    }
+}
+

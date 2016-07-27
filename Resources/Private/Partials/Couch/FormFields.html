@@ -1,0 +1,90 @@
+<p>
+<div class="controls controls-row">
+    <h4>
+        <label for="description">
+	         <f:translate key="tx_couch_domain_model_couch.description" />
+         </label>
+    </h4>
+	   <div class="controls">
+	       <f:form.textarea property="description" cols="220" rows="3" class="span8"/>
+        </div>
+</div>
+
+<div class="controls controls-row">
+    <label for="date and space">
+        <f:translate key="tx_couch_domain_model_couch.begin" /> / <f:translate key="tx_couch_domain_model_couch.end" />
+    </label>
+    
+    <div class="controls">
+        <f:if condition="{couch.begin}">
+            <f:then>
+                <f:form.textfield property="begin" value="{couch.begin->f:format.date(format:'Y/m/d H:i')}" id="datetimepicker-begin" type="text" class="span4" />
+            </f:then>
+            <f:else>
+                <f:form.textfield property="begin" value="{now->f:format.date(format:'Y/m/d H:i')}" id="datetimepicker-begin" type="text" class="span4"/>
+            </f:else>
+        </f:if>
+         <f:if condition="{couch.end}">
+            <f:then>
+                <f:form.textfield property="end" value="{couch.end->f:format.date(format:'Y/m/d H:i')}" id="datetimepicker-end" type="text" class="span4" />
+            </f:then>
+            <f:else>
+                <f:form.textfield property="end" value="{now->f:format.date(format:'Y/m/d H:i')}" id="datetimepicker-end" type="text" class="span4"/>
+            </f:else>
+        </f:if>
+    </div>
+</div>
+<label for="space">
+<f:translate key="tx_couch_domain_model_couch.space" />
+</label>
+<f:form.textfield property="space" class="span4"/>
+
+<f:form.hidden property="provider" value="{provider.uid}" />
+
+<div class="controls controls-row">
+    <label for="address.name">
+        <f:translate key="tx_addressmgmt_domain_model_address.name" /> 
+    </label>
+    <div class="controls">
+        <f:form.textfield property="address.name" class="span6"/>
+    </div>
+</div>
+
+<div class="controls controls-row">
+    <label for="street">
+        <f:translate key="tx_couch_domain_model_address.street" /> / <f:translate key="tx_couch_domain_model_address.street_number" />
+    </label>
+    <div class="controls">
+        <f:form.textfield property="address.street" class="span6"/> <f:form.textfield property="address.streetNumber" class="span2"/>
+    </div>
+</div>
+
+<div class="controls controls-row">
+    <label for="ZIP and city">
+        <f:translate key="tx_couch_domain_model_address.zip" /> / <f:translate key="tx_couch_domain_model_address.city"/>
+    </label>
+    <div class="controls">
+        <f:form.textfield property="address.zip" class="span2"/><f:form.textfield property="address.city" class="span6"/>
+    </div>
+</div>
+
+<div class="controls controls-row">
+    <label for="country">
+	   <f:translate key="tx_couch_domain_model_address.country" /> / <f:translate key="tx_couch_domain_model_address.state" />
+    </label>
+    <div class="controls">
+        <f:form.textfield property="address.country" class="span4"/><f:form.textfield property="address.state" class="span4"/>
+    </div>
+</div>
+
+
+<div class="controls controls-row">
+    <label for="lat">
+	    <f:translate key="tx_couch_domain_model_address.latitude" /> / <f:translate key="tx_couch_domain_model_address.longitude" />
+    </label>
+    <div class="controls">
+        <f:form.textfield property="address.latitude" class="span4"/> <f:form.textfield property="address.longitude" class="span4"/>
+    </div>
+</div>
+	
+</p>
