@@ -1,2 +1,3 @@
 # couch
-A typo3 extension to manage couchs
+Typo3 Extension that manages sleeping places
+
