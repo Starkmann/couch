@@ -62,7 +62,7 @@ class Couch extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     /**
      * provider
      *
-     * @var \Eike\Couch\Domain\Model\FeUser
+     * @var \In2\Femanager\Domain\Model\User
      * 
      */
     protected $provider = null;
@@ -162,7 +162,7 @@ class Couch extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     /**
      * Returns the provider
      *
-     * @return \Eike\Couch\Domain\Model\FeUser $provider
+     * @return \In2\Femanager\Domain\Model\User $provider
      */
     public function getProvider()
     {
@@ -172,7 +172,7 @@ class Couch extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     /**
      * Sets the provider
      *
-     * @param \Eike\Couch\Domain\Model\FeUser $provider
+     * @param \In2\Femanager\Domain\Model\User $provider
      * @return void
      */
     public function setProvider($provider)

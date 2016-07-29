@@ -26,6 +26,7 @@ $EM_CONF[$_EXTKEY] = array(
 		'depends' => array(
 			'typo3' => '6.2.0-6.6.99',
 			'addressmgmt' => '1.0.0',
+			'femanager' => '1.5.2',
 		),
 		'conflicts' => array(
 		),

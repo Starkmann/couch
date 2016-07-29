@@ -182,7 +182,7 @@ class CouchTest extends \TYPO3\CMS\Core\Tests\UnitTestCase
 	 */
 	public function setProviderForObjectStorageContainingFeUserSetsProvider()
 	{
-		$provider = new \Eike\Couch\Domain\Model\FeUser();
+		$provider = new \In2\Femanager\Domain\Model\User();
 		$objectStorageHoldingExactlyOneProvider = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
 		$objectStorageHoldingExactlyOneProvider->attach($provider);
 		$this->subject->setProvider($objectStorageHoldingExactlyOneProvider);
@@ -199,7 +199,7 @@ class CouchTest extends \TYPO3\CMS\Core\Tests\UnitTestCase
 	 */
 	public function addProviderToObjectStorageHoldingProvider()
 	{
-		$provider = new \Eike\Couch\Domain\Model\FeUser();
+		$provider = new \In2\Femanager\Domain\Model\User();
 		$providerObjectStorageMock = $this->getMock('TYPO3\\CMS\\Extbase\\Persistence\\ObjectStorage', array('attach'), array(), '', FALSE);
 		$providerObjectStorageMock->expects($this->once())->method('attach')->with($this->equalTo($provider));
 		$this->inject($this->subject, 'provider', $providerObjectStorageMock);
@@ -212,7 +212,7 @@ class CouchTest extends \TYPO3\CMS\Core\Tests\UnitTestCase
 	 */
 	public function removeProviderFromObjectStorageHoldingProvider()
 	{
-		$provider = new \Eike\Couch\Domain\Model\FeUser();
+		$provider = new \In2\Femanager\Domain\Model\User();
 		$providerObjectStorageMock = $this->getMock('TYPO3\\CMS\\Extbase\\Persistence\\ObjectStorage', array('detach'), array(), '', FALSE);
 		$providerObjectStorageMock->expects($this->once())->method('detach')->with($this->equalTo($provider));
 		$this->inject($this->subject, 'provider', $providerObjectStorageMock);

@@ -36,10 +36,10 @@ class MayEditObjectViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractC
 	/**
 	 * 
 	 * @param \Eike\Couch\Domain\Model\Couch $couch
-	 * @param \Eike\Couch\Domain\Model\FeUser $user
+	 * @param \In2\Femanager\Domain\Model\User $user
 	 * @return string
 	 */
-	public function render($couch, \Eike\Couch\Domain\Model\FeUser $user = NULL){
+	public function render($couch, \In2\Femanager\Domain\Model\User $user = NULL){
 		if($couch->getProvider() == $user) {
 			return $this->renderThenChild();
 		} else {
