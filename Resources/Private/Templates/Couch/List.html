@@ -67,10 +67,10 @@ Otherwise your changes will be overwritten the next time you save the extension 
 			     {couch.address.city}
 			 </td>
 			 <td>
-			     {couch.begin-> f:format.date(format:'d.m.Y H:i Uhr')}
+			     {couch.begin-> f:format.date(format:'d.m.Y H:i')} Uhr
 			 </td>
 			  <td>
-			     {couch.end -> f:format.date(format:'d.m.Y H:i Uhr')}
+			     {couch.end -> f:format.date(format:'d.m.Y H:i')} Uhr
 			 </td>
 			 <td>
 			     <f:link.action action="show" arguments="{couch : couch}"><span class="btn btn-small">Eintrag ansehen</span> </f:link.action>
