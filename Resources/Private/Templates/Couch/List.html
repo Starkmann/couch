@@ -67,10 +67,10 @@ Otherwise your changes will be overwritten the next time you save the extension 
 			     {couch.address.city}
 			 </td>
 			 <td>
-			     {couch.begin-> f:format.date(format:'Y/m/d H:i')}
+			     {couch.begin-> f:format.date(format:'d.m.Y H:i Uhr')}
 			 </td>
 			  <td>
-			     {couch.end -> f:format.date(format:'Y/m/d H:i')}
+			     {couch.end -> f:format.date(format:'d.m.Y H:i Uhr')}
 			 </td>
 			 <td>
 			     <f:link.action action="show" arguments="{couch : couch}"><span class="btn btn-small">Eintrag ansehen</span> </f:link.action>
@@ -92,7 +92,7 @@ Otherwise your changes will be overwritten the next time you save the extension 
 	</f:then>
 	<f:else>
 		<f:if condition="{settings.registrationPid}">
-			<f:link.page pageUid="{settings.registrationPid}">Regster to post an couch</f:link.page>
+			<f:link.page pageUid="{settings.registrationPid}"><span class="btn">Registrieren um einen Eintrag zu erstellen</span></f:link.page>
 		</f:if>
 	</f:else>
 </f:if>
