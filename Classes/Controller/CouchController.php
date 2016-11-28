@@ -57,6 +57,13 @@ class CouchController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
     protected $access = NULL;
     
     /**
+     * 
+     * @var \Eike\Couch\Domain\Repository\CategoryRepository
+     * @inject
+     */
+    protected $categoryRepository = NULL;
+    
+    /**
      *
      * @var \Undkonsorten\Addressmgmt\Service\Address
      * @inject
@@ -146,6 +153,7 @@ class CouchController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
     		throw new InsufficientUserPermissionsException('You are not logged in so you cannot create something here',1466258305);
     	}
     	$this->view->assign('now', new \DateTime());
+    	$this->view->assign('categories', $this->categoryRepository->findByUids($this->settings['category']));
     	$this->view->assign('provider', $this->access->getLoggedInFrontendUser());
     }
     
@@ -177,6 +185,7 @@ class CouchController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
     		throw new InsufficientUserPermissionsException('You are not allowed to edit this couch',1466260533);
     	}
         $this->view->assign('couch', $couch);
+        $this->view->assign('categories', $this->categoryRepository->findByUids($this->settings['category']));
         $this->view->assign('provider', $this->access->getLoggedInFrontendUser());
     }
     

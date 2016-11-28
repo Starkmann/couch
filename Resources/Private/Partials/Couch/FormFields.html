@@ -37,13 +37,21 @@
 <label for="space">
 <f:translate key="tx_couch_domain_model_couch.space" />
 </label>
-<f:form.textfield property="space" class="span4"/>
+<f:form.textfield property="space" class="span4" value="1" />
 
 <f:form.hidden property="provider" value="{provider.uid}" />
 
 <div class="controls controls-row">
+	<f:for each="{categories}" as="category">
+	      <label for="checkbox-{category.uid}" class="menu-checkbox">
+	        <f:form.checkbox id="checkbox-{category.uid}" property="categories" value="{category.uid}" multiple="1" />
+	        {category.title}
+	      </label>
+	</f:for>
+</div>
+<div class="controls controls-row">
     <label for="address.name">
-        <f:translate key="tx_addressmgmt_domain_model_address.name" /> 
+        <f:translate key="tx_couch_domain_model_address.name" /> 
     </label>
     <div class="controls">
         <f:form.textfield property="address.name" class="span6"/>

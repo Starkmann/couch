@@ -20,7 +20,7 @@ Otherwise your changes will be overwritten the next time you save the extension 
 <f:render partial="FormErrors" arguments="{object:Couch}" />
 
 <f:form action="create"  name="newCouch" object="{newCouch}">
-<f:render partial="Couch/FormFields" arguments="{provider:provider, now:now}" />
+<f:render partial="Couch/FormFields" arguments="{provider:provider, now:now, categories:categories}" />
 	<p><f:form.submit value="Eintrag erstellen" class="btn btn-success"/></p>
 </f:form>
 </f:section>

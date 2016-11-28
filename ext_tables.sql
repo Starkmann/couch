@@ -12,6 +12,7 @@ CREATE TABLE tx_couch_domain_model_couch (
 	space int(11) DEFAULT '0' NOT NULL,
 	provider int(11) unsigned DEFAULT '0' NOT NULL,
 	address int(11) unsigned DEFAULT '0',
+	categories int(11) unsigned DEFAULT '0' NOT NULL,
 
 	tstamp int(11) unsigned DEFAULT '0' NOT NULL,
 	crdate int(11) unsigned DEFAULT '0' NOT NULL,

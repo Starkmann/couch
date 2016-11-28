@@ -1,6 +1,7 @@
 <?php
 namespace Eike\Couch\Domain\Model;
 
+
 /***************************************************************
  *
  *  Copyright notice
@@ -57,7 +58,7 @@ class Couch extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
      *
      * @var int
      */
-    protected $space = 0;
+    protected $space = 1;
     
     /**
      * provider
@@ -73,6 +74,12 @@ class Couch extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
      * @var \Undkonsorten\Addressmgmt\Domain\Model\Address\Location
      */
     protected $address = null;
+    
+    /**
+     * 
+     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Eike\Couch\Domain\Model\Category>
+     */
+    protected $categories = NULL;
     
     /**
      * Returns the description
@@ -235,7 +242,48 @@ class Couch extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
 		$this->end = $end;
 	}
 	
-    
+	/**
+	 * Adds a Category
+	 *
+	 * @param \Eike\Couch\Domain\Model\Category $category
+	 * @return void
+	 */
+	public function addCategory(\Eike\Couch\Domain\Model\Category $category)
+	{
+	    $this->categories->attach($category);
+	}
+	
+	/**
+	 * Removes a Category
+	 *
+	 * @param \Eike\Couch\Domain\Model\Category $categoryToRemove The Category to be removed
+	 * @return void
+	 */
+	public function removeCategory(\Eike\Couch\Domain\Model\Category $categoryToRemove)
+	{
+	    $this->categories->detach($categoryToRemove);
+	}
+	
+	/**
+	 * Returns the category
+	 *
+	 * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Eike\Couch\Domain\Model\Category> $categories
+	 */
+	public function getCategories()
+	{
+	    return $this->categories;
+	}
+	
+	/**
+	 * Sets the category
+	 *
+	 * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Eike\Couch\Domain\Model\Category> $categories
+	 * @return void
+	 */
+	public function setCategories(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $categories)
+	{
+	    $this->categories = $categories;
+	}
     
     
 

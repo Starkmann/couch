@@ -23,10 +23,10 @@ return array(
 		'iconfile' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath('couch') . 'Resources/Public/Icons/tx_couch_domain_model_couch.gif'
 	),
 	'interface' => array(
-		'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, description, begin, end, space, provider, address',
+		'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, description, begin, end, space, provider, address, categories',
 	),
 	'types' => array(
-		'1' => array('showitem' => 'sys_language_uid;;;;1-1-1, l10n_parent, l10n_diffsource, hidden;;1, description;;;richtext:rte_transform[mode=ts_links], begin, end, space, provider, address, --div--;LLL:EXT:cms/locallang_ttc.xlf:tabs.access, starttime, endtime'),
+		'1' => array('showitem' => 'sys_language_uid;;;;1-1-1, l10n_parent, l10n_diffsource, hidden;;1, description;;;richtext:rte_transform[mode=ts_links], begin, end, space, provider, address, categories, --div--;LLL:EXT:cms/locallang_ttc.xlf:tabs.access, starttime, endtime'),
 	),
 	'palettes' => array(
 		'1' => array('showitem' => ''),
@@ -201,5 +201,51 @@ return array(
 				'maxitems' => 1,
 			),
 		),
+	    'categories' => array(
+	        'exclude' => 1,
+	        'label' => 'LLL:EXT:couch/Resources/Private/Language/locallang_db.xlf:tx_couch_domain_model_couch.categories',
+	        'config' => array(
+	            'type' => 'select',
+	            'renderType' => 'selectMultipleSideBySide',
+	            'foreign_table' => 'sys_category',
+	            'MM' => 'sys_category_record_mm',
+	            'MM_opposite_field' => 'categories',
+	            'MM_match_fields' => array(
+	                'tablenames' => 'tx_couch_domain_model_couch',
+	                'fieldname' => 'categories',
+	            ),
+	            'size' => 10,
+	            'autoSizeMax' => 30,
+	            'maxitems' => 9999,
+	            'multiple' => 0,
+	            'wizards' => array(
+	                '_PADDING' => 1,
+	                '_VERTICAL' => 1,
+	                'edit' => array(
+	                    'module' => array(
+	                        'name' => 'wizard_edit',
+	                    ),
+	                    'type' => 'popup',
+	                    'title' => 'Edit',
+	                    'icon' => 'edit2.gif',
+	                    'popup_onlyOpenIfSelected' => 1,
+	                    'JSopenParams' => 'height=350,width=580,status=0,menubar=0,scrollbars=1',
+	                ),
+	                'add' => Array(
+	                    'module' => array(
+	                        'name' => 'wizard_add',
+	                    ),
+	                    'type' => 'script',
+	                    'title' => 'Create new',
+	                    'icon' => 'add.gif',
+	                    'params' => array(
+	                        'table' => 'sys_category',
+	                        'pid' => '###CURRENT_PID###',
+	                        'setValue' => 'prepend'
+	                    ),
+	                    ),
+	            ),
+	        ),
+	    ),
 	),
 );

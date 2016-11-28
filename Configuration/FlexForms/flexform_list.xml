@@ -30,10 +30,19 @@
 							<label>Category</label>
 							<config>
 							  <type>select</type>
+							  <autoSizeMax>50</autoSizeMax>
+							  <renderMode>tree</renderMode>
+							  <foreign_table_where> AND sys_category.sys_language_uid IN (-1, 0) ORDER BY sys_category.title ASC</foreign_table_where>
+							  <maxitems>9999</maxitems>
 							  <size>10</size>
-							  <maxitem>1</maxitem>
-							  <minitem>1</minitem>
 							  <renderType>selectTree</renderType>
+							  <treeConfig>
+								<parentField>parent</parentField>
+								<appearance>
+									<expandAll>1</expandAll>
+									<showHeader>1</showHeader>
+								</appearance>
+							  </treeConfig>
 							  <foreign_table>sys_category</foreign_table>
 							</config>
 						</TCEforms>
