@@ -37,7 +37,7 @@ class Access  {
 	/**
 	 * fronted user repository
 	 *
-	 * @var \In2\Femanager\Domain\Repository\UserRepository
+	 * @var \TYPO3\CMS\Extbase\Domain\Repository\FrontendUserRepository
 	 * @inject
 	 */
 	protected $userRepository;
@@ -45,7 +45,7 @@ class Access  {
 	/**
 	 * Return logged in frontend user, if any, NULL otherwise
 	 *
-	 * @return \In2\Femanager\Domain\Model\User
+	 * @return \TYPO3\CMS\Extbase\Domain\Model\FrontendUser
 	 */
 	public function getLoggedInFrontendUser() {
 		$frontendUser = NULL;
