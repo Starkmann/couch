@@ -31,6 +31,7 @@ namespace Eike\Couch\Service;
  *
  */
 use TYPO3\CMS\Extbase\Utility\DebuggerUtility;
+use TYPO3\CMS\Extbase\Domain\Model\FrontendUser;
 
 class Access  {
 	
@@ -59,7 +60,7 @@ class Access  {
 	/**
 	 * 
 	 * @param \Eike\Couch\Domain\Model\Couch $couch
-	 * @param \In2\Femanager\Domain\Model\User $feUser
+	 * @param FrontendUser
 	 * @return boolean
 	 */
 	public function mayEditOrDelete($couch, $feUser) {

@@ -2,6 +2,8 @@
 namespace Eike\Couch\Domain\Model;
 
 
+use TYPO3\CMS\Extbase\Domain\Model\FrontendUser;
+
 /***************************************************************
  *
  *  Copyright notice
@@ -63,7 +65,7 @@ class Couch extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     /**
      * provider
      *
-     * @var \In2\Femanager\Domain\Model\User
+     * @var \TYPO3\CMS\Extbase\Domain\Model\FrontendUser
      * 
      */
     protected $provider = null;
@@ -169,7 +171,7 @@ class Couch extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     /**
      * Returns the provider
      *
-     * @return \In2\Femanager\Domain\Model\User $provider
+     * @return FrontendUser $provider
      */
     public function getProvider()
     {
@@ -179,7 +181,7 @@ class Couch extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     /**
      * Sets the provider
      *
-     * @param \In2\Femanager\Domain\Model\User $provider
+     * @param FrontendUser $provider
      * @return void
      */
     public function setProvider($provider)
