@@ -10,7 +10,7 @@ if (!defined('TYPO3_MODE')) {
 	'List',
 	'Couch'
 );
-
+$settings = unserialize($GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf']['couch']);
 $pluginSignature = str_replace('_','',$_EXTKEY) . '_list';
 $GLOBALS['TCA']['tt_content']['types']['list']['subtypes_addlist'][$pluginSignature] = 'pi_flexform';
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPiFlexFormValue($pluginSignature, 'FILE:EXT:' . $_EXTKEY . '/Configuration/FlexForms/flexform_list.xml');
@@ -22,5 +22,20 @@ $GLOBALS['TCA']['tt_content']['types']['list']['subtypes_addlist'][$pluginSignat
 
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::makeCategorizable(
     $_EXTKEY,
-    'tx_couch_domain_model_couch'
+    'tx_couch_domain_model_couch',
+    'categories',
+    array(
+        'fieldConfiguration' => array(
+	            'renderType' => 'selectTree',
+				'renderMode' => 'tree',
+				'treeConfig' => array(
+						'parentField' => 'parent',
+						'rootUid' => $settings['couchCategory'],
+						'appearance' => array(
+								'expandAll' => TRUE,
+								'showHeader' => TRUE,
+						),
+				),
+	        )
+    )
 );
