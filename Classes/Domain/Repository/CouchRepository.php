@@ -1,5 +1,6 @@
 <?php
 namespace Eike\Couch\Domain\Repository;
+use TYPO3\CMS\Extbase\Persistence\QueryInterface;
 
 /***************************************************************
  *
@@ -32,5 +33,9 @@ namespace Eike\Couch\Domain\Repository;
 class CouchRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
 {
 
+    protected $defaultOrderings = array(
+        'address.city' => QueryInterface::ORDER_ASCENDING,
+        'begin' => QueryInterface::ORDER_ASCENDING
+    );
     
 }
