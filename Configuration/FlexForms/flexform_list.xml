@@ -12,6 +12,7 @@
 				<el>
 					<switchableControllerActions>
 						<TCEforms>
+							<onChange>reload</onChange>
 							<label>Select function</label>
 							<config>
 								<type>select</type>
@@ -64,6 +65,19 @@
 							</config>
 						</TCEforms>
 					</settings.registrationPid>
+                    <settings.listPage>
+                        <TCEforms>
+                            <label>List page</label>
+							<displayCond>FIELD:switchableControllerActions:=:Couch->new;Couch->create</displayCond>
+                            <config>
+                                <type>group</type>
+                                <internal_type>db</internal_type>
+                                <allowed>pages</allowed>
+								<minitems>1</minitems>
+								<maxitems>1</maxitems>
+                            </config>
+                        </TCEforms>
+                    </settings.listPage>
 					<settings.maxZoom>
 					    <TCEforms>
 					      <label>Maximale Zoomstufe (Default: 16)</label>

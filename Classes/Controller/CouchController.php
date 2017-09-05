@@ -169,7 +169,12 @@ class CouchController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
     	$this->addressService->updateCoordinates($newCouch->getAddress());
         $this->couchRepository->add($newCouch);
         $this->flushCachesByExtKeyTag();
-        $this->redirect('list');
+        if($this->settings['listPage'] != ''){
+            $this->redirect(null,null,null,null,$this->settings['listPage']);
+        }else{
+            $this->redirect('list');
+        }
+
     }
     
     /**

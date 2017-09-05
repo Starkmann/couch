@@ -54,7 +54,8 @@
         <f:translate key="tx_couch_domain_model_address.name" /> 
     </label>
     <div class="controls">
-        <f:form.textfield property="address.name" class="span6"/>
+        <f:form.textfield property="address.name" class="span6" required="1"/>
+        <f:render partial="FieldError" arguments="{object: Address property: 'address.name'}" />
     </div>
 </div>
 
