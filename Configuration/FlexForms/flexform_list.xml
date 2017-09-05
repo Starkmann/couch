@@ -21,6 +21,10 @@
 										<numIndex index="0">Show</numIndex>
 										<numIndex index="1">Couch->show;Couch->new;Couch->create;Couch->edit;Couch->update;Couch->delete</numIndex>
 									</numIndex>
+									<numIndex index="2">
+										<numIndex index="0">Create</numIndex>
+										<numIndex index="1">Couch->new;Couch->create</numIndex>
+									</numIndex>
 								</items>
 							</config>
 						</TCEforms>
