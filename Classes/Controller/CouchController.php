@@ -47,7 +47,7 @@ class CouchController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
      * @inject
      */
     protected $addressRepository = NULL;
-    
+
     /**
      * access
      *
@@ -55,21 +55,21 @@ class CouchController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
      * @inject
      */
     protected $access = NULL;
-    
+
     /**
-     * 
+     *
      * @var \Eike\Couch\Domain\Repository\CategoryRepository
      * @inject
      */
     protected $categoryRepository = NULL;
-    
+
     /**
      *
      * @var \Undkonsorten\Addressmgmt\Service\Address
      * @inject
      */
     protected $addressService = NULL;
-    
+
     public function initializeCreateAction() {
         if (isset($this->arguments['newCouch'])) {
             $this->arguments['newCouch']
@@ -80,9 +80,12 @@ class CouchController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
             ->getPropertyMappingConfiguration()
             ->forProperty('end')
             ->setTypeConverterOption('TYPO3\\CMS\\Extbase\\Property\\TypeConverter\\DateTimeConverter', \TYPO3\CMS\Extbase\Property\TypeConverter\DateTimeConverter::CONFIGURATION_DATE_FORMAT, 'Y/m/d H:i');
+            $this->arguments['newCouch']->getPropertyMappingConfiguration()->forProperty('address')->allowProperties('zip');
+
+
         }
     }
-    
+
     public function initializeUpdateAction() {
         if (isset($this->arguments['couch'])) {
             $this->arguments['couch']
@@ -93,9 +96,10 @@ class CouchController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
             ->getPropertyMappingConfiguration()
             ->forProperty('end')
             ->setTypeConverterOption('TYPO3\\CMS\\Extbase\\Property\\TypeConverter\\DateTimeConverter', \TYPO3\CMS\Extbase\Property\TypeConverter\DateTimeConverter::CONFIGURATION_DATE_FORMAT, 'Y/m/d H:i');
+            $this->arguments['couch']->getPropertyMappingConfiguration()->forProperty('address')->allowProperties('zip');
         }
     }
-    
+
     /**
      * Initializes the current action
      *
@@ -106,7 +110,7 @@ class CouchController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
     	if (!empty($GLOBALS['TSFE']) && is_object($GLOBALS['TSFE'])) {
     		// We only want to set the tag once in one request, so we have to cache that statically if it has been done
     		static $cacheTagsSet = FALSE;
-    
+
     		if (!$cacheTagsSet) {
     			/** @var $typoScriptFrontendController \TYPO3\CMS\Frontend\Controller\TypoScriptFrontendController  */
     			$typoScriptFrontendController = $GLOBALS['TSFE'];
@@ -114,9 +118,9 @@ class CouchController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
     			$cacheTagsSet = TRUE;
     		}
     	}
-    
+
     }
-    
+
     /**
      * action list
      *
@@ -125,12 +129,12 @@ class CouchController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
     public function listAction()
     {
         $couchs = $this->couchRepository->findAll();
-        
+
         $this->view->assign('feUser', $this->access->getLoggedInFrontendUser());
         $this->view->assign('couchs', $couchs);
         $this->view->assign('destination', $this->addressRepository->findByUid($this->settings['destination']));
     }
-    
+
     /**
      * action show
      *
@@ -141,7 +145,7 @@ class CouchController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
     {
         $this->view->assign('couch', $couch);
     }
-    
+
     /**
      * action new
      *
@@ -156,7 +160,7 @@ class CouchController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
     	$this->view->assign('categories', $this->categoryRepository->findByUids($this->settings['category']));
     	$this->view->assign('provider', $this->access->getLoggedInFrontendUser());
     }
-    
+
     /**
      * action create
      *
@@ -176,7 +180,7 @@ class CouchController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
         }
 
     }
-    
+
     /**
      * action edit
      *
@@ -193,7 +197,7 @@ class CouchController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
         $this->view->assign('categories', $this->categoryRepository->findByUids($this->settings['category']));
         $this->view->assign('provider', $this->access->getLoggedInFrontendUser());
     }
-    
+
     /**
      * action update
      *
@@ -208,7 +212,7 @@ class CouchController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
         $this->flushCachesByExtKeyTag();
         $this->redirect('list');
     }
-    
+
     /**
      * action delete
      *
@@ -225,7 +229,7 @@ class CouchController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
         $this->flushCachesByExtKeyTag();
         $this->redirect('list');
     }
-    
+
     /**
      * Flush all caches with this extension key as tag
      */
