@@ -2,6 +2,7 @@
 namespace Eike\Couch\Controller;
 
 use Eike\Couch\Domain\Model\Couch;
+use In2code\Powermail\Utility\LocalizationUtility;
 use TYPO3\CMS\Extbase\Utility\DebuggerUtility;
 /***************************************************************
  *
@@ -172,7 +173,8 @@ class CouchController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
      */
     public function createAction(\Eike\Couch\Domain\Model\Couch $newCouch)
     {
-    	$this->addFlashMessage('The object was created.', '', \TYPO3\CMS\Core\Messaging\AbstractMessage::OK);
+
+    	$this->addFlashMessage(\TYPO3\CMS\Extbase\Utility\LocalizationUtility::translate('flashMessage.newCouch','couch'), '', \TYPO3\CMS\Core\Messaging\AbstractMessage::OK);
     	$this->addressService->updateCoordinates($newCouch->getAddress());
         $this->couchRepository->add($newCouch);
         $this->flushCachesByExtKeyTag();
@@ -209,7 +211,7 @@ class CouchController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
      */
     public function updateAction(\Eike\Couch\Domain\Model\Couch $couch)
     {
-        $this->addFlashMessage('The object was updated.', '', \TYPO3\CMS\Core\Messaging\AbstractMessage::OK);
+        $this->addFlashMessage(\TYPO3\CMS\Extbase\Utility\LocalizationUtility::translate('flashMessage.updateCouch','couch'), '', \TYPO3\CMS\Core\Messaging\AbstractMessage::OK);
         $this->addressService->updateCoordinates($couch->getAddress());
         $this->couchRepository->update($couch);
         $this->flushCachesByExtKeyTag();
@@ -227,7 +229,7 @@ class CouchController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
     	if(!$this->access->mayEditOrDelete($couch, $this->access->getLoggedInFrontendUser())){
     		throw new InsufficientUserPermissionsException('You are not allowed to delete this couch',1466260675);
     	}
-        $this->addFlashMessage('The object was deleted.', '', \TYPO3\CMS\Core\Messaging\AbstractMessage::OK);
+        $this->addFlashMessage(\TYPO3\CMS\Extbase\Utility\LocalizationUtility::translate('flashMessage.deleteCouch','couch'), '', \TYPO3\CMS\Core\Messaging\AbstractMessage::OK);
         $this->couchRepository->remove($couch);
         $this->flushCachesByExtKeyTag();
         $this->redirect('list');
