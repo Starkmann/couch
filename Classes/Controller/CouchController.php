@@ -1,6 +1,7 @@
 <?php
 namespace Eike\Couch\Controller;
 
+use Eike\Couch\Domain\Model\Couch;
 use TYPO3\CMS\Extbase\Utility\DebuggerUtility;
 /***************************************************************
  *
@@ -156,9 +157,11 @@ class CouchController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
     	if(!$this->access->getLoggedInFrontendUser()){
     		throw new InsufficientUserPermissionsException('You are not logged in so you cannot create something here',1466258305);
     	}
+
     	$this->view->assign('now', new \DateTime());
     	$this->view->assign('categories', $this->categoryRepository->findByUids($this->settings['category']));
     	$this->view->assign('provider', $this->access->getLoggedInFrontendUser());
+    	$this->view->assign('newCouch', $this->objectManager->get(Couch::class));
     }
 
     /**
@@ -237,6 +240,11 @@ class CouchController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
     	/*@var $cacheManager \TYPO3\CMS\Core\Cache\CacheManager */
     	$cacheManager = $this->objectManager->get('TYPO3\CMS\Core\Cache\CacheManager');
     	$cacheManager->flushCachesByTag($this->request->getControllerExtensionKey());
+    }
+
+    protected function getErrorFlashMessage() {
+        #DebuggerUtility::var_dump($this->controllerContext->getArguments()->getValidationResults()->getFlattenedErrors());
+        return FALSE;
     }
 
 }
