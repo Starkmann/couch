@@ -12,4 +12,30 @@ plugin.tx_couch_list {
 		# cat=plugin.tx_couch_list//a; type=string; label=Default storage PID
 		storagePid =
 	}
+	settings{
+    	    mapConfiguration {
+                # cat=plugin.tx_couch_list/map/0010; type=string; label=Latitude: latitude of map center
+                latitude =
+                # cat=plugin.tx_couch_list/map/0020; type=string; label=Longitude: longitude of map center
+                longitude =
+                # cat=plugin.tx_couch_list/map/0040; type=int; label=Zoom: initial zoom of map
+                zoom =
+                # cat=plugin.tx_couch_list/map/0050; type=int; label=Padding: marker padding/spacing in px
+                padding = 30
+            }
+            tileLayerConfiguration {
+                # cat=plugin.tx_couch_list/tileServer/0060; type=string; label=URL Template: url template for tile server
+                urlTemplate = https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}
+                options {
+                    # cat=plugin.tx_couch_list/tileServer/0070; type=string; label=ID: identification for tile server
+                    id =
+                    # cat=plugin.tx_couch_list/tileServer/0080; type=string; label=Access token
+                    accessToken =
+                    # cat=plugin.tx_couch_list/tileServer/0090; type=string; label=Max zoom: Maximum zoom level for tile server
+                    maxZoom =
+                    # cat=plugin.tx_couch_list/tileServer/0100; type=string; label=Attribution: Map attribution for the tile server
+                    attribution = Insert attribution here!
+                }
+            }
+    	}
 }

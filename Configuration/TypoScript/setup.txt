@@ -8,12 +8,29 @@ plugin.tx_couch_list {
 	persistence {
 		storagePid = {$plugin.tx_couch_list.persistence.storagePid}
 	}
+	settings{
+    	    mapConfiguration {
+                latitude = {$plugin.tx_couch_list.settings.mapConfiguration.latitude}
+                longitude = {$plugin.tx_couch_list.settings.mapConfiguration.longitude}
+                zoom = {$plugin.tx_couch_list.settings.mapConfiguration.zoom}
+                #map padding in px-units
+                padding = {$plugin.tx_couch_list.settings.mapConfiguration.padding}
+            }
+            tileLayerConfiguration {
+                urlTemplate = {$plugin.tx_couch_list.settings.tileLayerConfiguration.urlTemplate}
+                options {
+                    id = {$plugin.tx_couch_list.settings.tileLayerConfiguration.options.id}
+                    accessToken = {$plugin.tx_couch_list.settings.tileLayerConfiguration.options.accessToken}
+                    attribution = {$plugin.tx_couch_list.settings.tileLayerConfiguration.options.attribution}
+                }
+            }
+    	}
 }
 
-page.includeCSS.tx_couch_leaflet = EXT:couch/Resources/Public/Css/leaflet.css
-page.includeJS.tx_couch_leaflet = EXT:couch/Resources/Public/Scripts/leaflet.js
-page.includeJS.tx_couch_leaflet_routing = EXT:couch/Resources/Public/Scripts/leaflet-routing-machine.js
-page.includeCSS.tx_couch_leaflet_routing = EXT:couch/Resources/Public/Css/leaflet-routing-machine.css
+#page.includeCSS.tx_couch_leaflet = EXT:couch/Resources/Public/Css/leaflet.css
+#page.includeJS.tx_couch_leaflet = EXT:couch/Resources/Public/Scripts/leaflet.js
+#page.includeJS.tx_couch_leaflet_routing = EXT:couch/Resources/Public/Scripts/leaflet-routing-machine.js
+#page.includeCSS.tx_couch_leaflet_routing = EXT:couch/Resources/Public/Css/leaflet-routing-machine.css
 
 page.includeJSFooter.tx_couch_datetimepicker = EXT:couch/Resources/Public/Scripts/jquery.datetimepicker.full.js
 page.includeJSFooter.tx_couch_datetimepicker_init = EXT:couch/Resources/Public/Scripts/DatePicker.js
