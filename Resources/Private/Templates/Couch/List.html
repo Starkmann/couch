@@ -16,7 +16,7 @@ Otherwise your changes will be overwritten the next time you save the extension 
 <h1>Sleeping palces</h1>
 
 <f:flashMessages />
-	<f:render partial="Map/Show" arguments="{addresses:couchs, contentUid:contentUid}"/>
+	<f:render partial="Map/Show" arguments="{couchs:couchs, contentUid:contentUid}"/>
 <f:if condition="{couchs}">
 <p>
 	<table class="table table-striped">
@@ -32,8 +32,8 @@ Otherwise your changes will be overwritten the next time you save the extension 
             </thead>
             <tbody>
 	<f:for each="{couchs}" as="couch">
-		
-		 
+
+
             <tr>
             <td>
 			     {couch.address.name}
@@ -54,11 +54,13 @@ Otherwise your changes will be overwritten the next time you save the extension 
 			     <f:link.action action="show" arguments="{couch : couch}"><span class="btn btn-small">Eintrag ansehen</span> </f:link.action>
 			 </td>
 			 <td>
-			 	<f:render partial="ButtonsEditDelete" arguments="{couch : couch, feUser:feUser}" />
+				 <f:if condition="{feUser}">
+			 			<f:render partial="ButtonsEditDelete" arguments="{couch : couch, feUser:feUser}" />
+				 </f:if>
 			 </td>
 			 </tr>
 			 </tbody>
-				
+
 		</li>
 	</f:for>
 	</table>

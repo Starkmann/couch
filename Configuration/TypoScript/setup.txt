@@ -27,10 +27,10 @@ plugin.tx_couch_list {
     	}
 }
 
-#page.includeCSS.tx_couch_leaflet = EXT:couch/Resources/Public/Css/leaflet.css
-#page.includeJS.tx_couch_leaflet = EXT:couch/Resources/Public/Scripts/leaflet.js
-#page.includeJS.tx_couch_leaflet_routing = EXT:couch/Resources/Public/Scripts/leaflet-routing-machine.js
-#page.includeCSS.tx_couch_leaflet_routing = EXT:couch/Resources/Public/Css/leaflet-routing-machine.css
+page.includeCSS.tx_couch_leaflet = EXT:couch/Resources/Public/Css/leaflet.css
+page.includeCSS.tx_couch_semantic_map = EXT:couch/Resources/Public/Css/semantic-map.css
+page.includeJSFooterlibs.tx_couch_sematic_map_libary = EXT:couch/Resources/Public/Scripts/semantic-map.min.js
+page.includeJSFooterlibs.tx_couch_sematic_map = EXT:couch/Resources/Public/Scripts/semantic-map-main.js
 
 page.includeJSFooter.tx_couch_datetimepicker = EXT:couch/Resources/Public/Scripts/jquery.datetimepicker.full.js
 page.includeJSFooter.tx_couch_datetimepicker_init = EXT:couch/Resources/Public/Scripts/DatePicker.js
