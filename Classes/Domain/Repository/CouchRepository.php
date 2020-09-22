@@ -30,7 +30,7 @@ use TYPO3\CMS\Extbase\Persistence\QueryInterface;
 /**
  * The repository for Couchs
  */
-class CouchRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
+class CouchRepository extends \Undkonsorten\Addressmgmt\Domain\Repository\AddressRepository
 {
 
     protected $defaultOrderings = array(

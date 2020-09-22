@@ -13,6 +13,10 @@ plugin.tx_couch_list {
 		storagePid =
 	}
 	settings{
+    	  # cat=plugin.tx_couch_list/settings; type=string; label= Order by
+            orderBy =
+    	    # cat=plugin.tx_couch_list/settings; type=options[ASC,DESC]; label=Order direction[ascending, descending]
+    	    orderDirection =
     	    mapConfiguration {
                 # cat=plugin.tx_couch_list/map/0010; type=string; label=Latitude: latitude of map center
                 latitude =

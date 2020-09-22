@@ -9,6 +9,8 @@ plugin.tx_couch_list {
 		storagePid = {$plugin.tx_couch_list.persistence.storagePid}
 	}
 	settings{
+	        orderDirection = {$plugin.tx_couch_list.settings.orderDirection}
+            orderBy = {$plugin.tx_couch_list.settings.orderBy}
     	    mapConfiguration {
                 latitude = {$plugin.tx_couch_list.settings.mapConfiguration.latitude}
                 longitude = {$plugin.tx_couch_list.settings.mapConfiguration.longitude}

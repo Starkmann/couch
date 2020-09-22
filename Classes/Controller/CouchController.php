@@ -130,7 +130,10 @@ class CouchController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
      */
     public function listAction()
     {
-        $couchs = $this->couchRepository->findAll();
+        if ($this->settings['orderBy'] && $this->settings['orderDirection']) {
+            $orderings = array($this->settings['orderBy'] => $this->settings['orderDirection']);
+        }
+        $couchs = $this->couchRepository->findDemanded(null,null,null, $orderings);
 
         $this->view->assign('feUser', $this->access->getLoggedInFrontendUser());
         $this->view->assign('couchs', $couchs);
