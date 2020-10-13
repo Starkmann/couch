@@ -29,10 +29,10 @@ plugin.tx_couch_list {
             }
             tileLayerConfiguration {
                 # cat=plugin.tx_couch_list/tileServer/0060; type=string; label=URL Template: url template for tile server
-                urlTemplate = https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}
+                urlTemplate = https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}
                 options {
                     # cat=plugin.tx_couch_list/tileServer/0070; type=string; label=ID: identification for tile server
-                    id = mapbox.streets
+                    id = mapbox/streets-v11
                     # cat=plugin.tx_couch_list/tileServer/0080; type=string; label=Access token
                     accessToken =
                     # cat=plugin.tx_couch_list/tileServer/0090; type=string; label=Max zoom: Maximum zoom level for tile server
