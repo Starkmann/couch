@@ -1,6 +1,7 @@
 <?php
 namespace Eike\Couch\Domain\Model;
 
+use TYPO3\CMS\Extbase\Domain\Model\FrontendUser;
 /***************************************************************
  *
  *  Copyright notice
@@ -25,11 +26,10 @@ namespace Eike\Couch\Domain\Model;
  *
  *  This copyright notice MUST APPEAR in all copies of the script!
  ***************************************************************/
-
 /**
  * FeUser
  */
-class FeUser extends \TYPO3\CMS\Extbase\Domain\Model\FrontendUser
+class FeUser extends FrontendUser
 {
 
     

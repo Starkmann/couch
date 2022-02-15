@@ -17,20 +17,17 @@ $EM_CONF[$_EXTKEY] = array(
 	'author' => 'Eike Starkmann',
 	'author_email' => 'eike.starkmann@posteo.de',
 	'state' => 'alpha',
-	'internal' => '',
-	'uploadfolder' => '0',
-	'createDirs' => '',
-	'clearCacheOnLoad' => 0,
-	'version' => '2.0.2',
+	'version' => '3.0.0',
 	'constraints' => array(
 		'depends' => array(
-			'typo3' => '8.7.0-8.7.99',
-			'addressmgmt' => '3.1.2-3.1.99',
-			'femanager' => '4.2.0-4.2.99',
+			'typo3' => '10.4.0-10.99.99',
+			'addressmgmt' => '5.0.0-5.99.99',
+
 		),
 		'conflicts' => array(
 		),
 		'suggests' => array(
+            'femanager' => '6.0.0-6.99.99',
 		),
 	),
 );

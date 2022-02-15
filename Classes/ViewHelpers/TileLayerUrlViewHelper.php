@@ -4,16 +4,15 @@
 namespace Eike\Couch\ViewHelpers;
 
 
-use TYPO3\CMS\Fluid\Core\Rendering\RenderingContextInterface;
-use TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper;
-use TYPO3\CMS\Fluid\Core\ViewHelper\Facets\CompilableInterface;
 
-class TileLayerUrlViewHelper extends AbstractViewHelper implements CompilableInterface
+use TYPO3Fluid\Fluid\Core\Rendering\RenderingContextInterface;
+use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
+
+class TileLayerUrlViewHelper extends AbstractViewHelper
 {
     /**
      * Constructor
      *
-     * @api
      */
     public function __construct()
     {
@@ -24,7 +23,6 @@ class TileLayerUrlViewHelper extends AbstractViewHelper implements CompilableInt
      * Replaces newline characters by HTML line breaks.
      *
      * @return string the altered string.
-     * @api
      */
     public function render()
     {

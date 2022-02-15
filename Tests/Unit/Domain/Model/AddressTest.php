@@ -2,6 +2,8 @@
 
 namespace Eike\Couch\Tests\Unit\Domain\Model;
 
+use TYPO3\TestingFramework\Core\Unit\UnitTestCase;
+use Undkonsorten\Addressmgmt\Domain\Model\Address\Location;
 /***************************************************************
  *  Copyright notice
  *
@@ -25,7 +27,6 @@ namespace Eike\Couch\Tests\Unit\Domain\Model;
  *
  *  This copyright notice MUST APPEAR in all copies of the script!
  ***************************************************************/
-
 /**
  * Test case for class \Undkonsorten\Addressmgmt\Domain\Model\Address\Location.
  *
@@ -34,7 +35,7 @@ namespace Eike\Couch\Tests\Unit\Domain\Model;
  *
  * @author Eike Starkmann <eike.starkmann@posteo.de>
  */
-class AddressTest extends \TYPO3\CMS\Core\Tests\UnitTestCase
+class AddressTest extends UnitTestCase
 {
 	/**
 	 * @var \Undkonsorten\Addressmgmt\Domain\Model\Address\Location
@@ -43,7 +44,7 @@ class AddressTest extends \TYPO3\CMS\Core\Tests\UnitTestCase
 
 	public function setUp()
 	{
-		$this->subject = new \Undkonsorten\Addressmgmt\Domain\Model\Address\Location();
+		$this->subject = new Location();
 	}
 
 	public function tearDown()

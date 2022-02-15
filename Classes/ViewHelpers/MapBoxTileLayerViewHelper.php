@@ -1,17 +1,15 @@
 <?php
 namespace Eike\Couch\ViewHelpers;
 
-use TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper;
+use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
 class MapBoxTileLayerViewHelper extends AbstractViewHelper {
-  
-    /**
-     * 
-     * @param string $id
-     * @param string $accesssToken
-     * @param integer $maxZoom
-     * @param string $attribution
-     */
-    public function render($id, $accesssToken, $maxZoom = 16, $attribution = "") {
+
+    public function render()
+    {
+        $id = $this->arguments['id'];
+        $accesssToken = $this->arguments['accesssToken'];
+        $maxZoom = $this->arguments['maxZoom'];
+        $attribution = $this->arguments['attribution'];
         $result = "
               L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
 	     	  attribution: '$attribution',
@@ -21,6 +19,14 @@ class MapBoxTileLayerViewHelper extends AbstractViewHelper {
 	     	}).addTo(map);
             ";
         return $result;
+    }
+
+    public function initializeArguments(): void
+    {
+        $this->registerArgument('id', 'string', '', true);
+        $this->registerArgument('accesssToken', 'string', '', true);
+        $this->registerArgument('maxZoom', 'integer', '', false, 16);
+        $this->registerArgument('attribution', 'string', '', false, '');
     }
 }
 ?>

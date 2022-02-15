@@ -1,5 +1,6 @@
 <?php
 namespace Eike\Couch\Service;
+use TYPO3\CMS\Extbase\Domain\Repository\FrontendUserRepository;
 /***************************************************************
  *  Copyright notice
  *
@@ -34,15 +35,14 @@ use TYPO3\CMS\Extbase\Utility\DebuggerUtility;
 use TYPO3\CMS\Extbase\Domain\Model\FrontendUser;
 
 class Access  {
-	
+
 	/**
 	 * fronted user repository
 	 *
 	 * @var \TYPO3\CMS\Extbase\Domain\Repository\FrontendUserRepository
-	 * @inject
 	 */
 	protected $userRepository;
-	
+
 	/**
 	 * Return logged in frontend user, if any, NULL otherwise
 	 *
@@ -65,6 +65,11 @@ class Access  {
 	 */
 	public function mayEditOrDelete($couch, $feUser) {
 		return $couch->getProvider() == $feUser;
+	}
+
+	public function injectUserRepository(FrontendUserRepository $userRepository): void
+	{
+		$this->userRepository = $userRepository;
 	}
 }
 ?>

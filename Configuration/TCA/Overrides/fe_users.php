@@ -46,8 +46,3 @@ $GLOBALS['TCA']['fe_users']['types']['Tx_Couch_FeUser']['showitem'] .= ',--div--
 $GLOBALS['TCA']['fe_users']['types']['Tx_Couch_FeUser']['showitem'] .= '';
 
 $GLOBALS['TCA']['fe_users']['columns'][$GLOBALS['TCA']['fe_users']['ctrl']['type']]['config']['items'][] = array('LLL:EXT:couch/Resources/Private/Language/locallang_db.xlf:fe_users.tx_extbase_type.Tx_Couch_FeUser','Tx_Couch_FeUser');
-
-\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addLLrefForTCAdescr(
-	'',
-	'EXT:/Resources/Private/Language/locallang_csh_.xlf'
-);

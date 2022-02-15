@@ -1,6 +1,15 @@
 <?php
 namespace Eike\Couch\Controller;
 
+use TYPO3\CMS\Extbase\Annotation as Extbase;
+use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
+use TYPO3\CMS\Extbase\Property\TypeConverter\DateTimeConverter;
+use TYPO3\CMS\Core\Messaging\AbstractMessage;
+use Eike\Couch\Domain\Repository\CouchRepository;
+use Undkonsorten\Addressmgmt\Domain\Repository\AddressRepository;
+use Eike\Couch\Service\Access;
+use Eike\Couch\Domain\Repository\CategoryRepository;
+use Undkonsorten\Addressmgmt\Service\AddressLocatorService;
 use Eike\Couch\Domain\Model\Couch;
 use In2code\Powermail\Utility\LocalizationUtility;
 use TYPO3\CMS\Extbase\Utility\DebuggerUtility;
@@ -32,21 +41,19 @@ use TYPO3\CMS\Extbase\Utility\DebuggerUtility;
 /**
  * CouchController
  */
-class CouchController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
+class CouchController extends ActionController
 {
 
     /**
      * couchRepository
      *
      * @var \Eike\Couch\Domain\Repository\CouchRepository
-     * @inject
      */
     protected $couchRepository = NULL;
     /**
      * addressRepository
      *
      * @var \Undkonsorten\Addressmgmt\Domain\Repository\AddressRepository
-     * @inject
      */
     protected $addressRepository = NULL;
 
@@ -54,21 +61,18 @@ class CouchController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
      * access
      *
      * @var \Eike\Couch\Service\Access
-     * @inject
      */
     protected $access = NULL;
 
     /**
      *
      * @var \Eike\Couch\Domain\Repository\CategoryRepository
-     * @inject
      */
     protected $categoryRepository = NULL;
 
     /**
      *
      * @var \Undkonsorten\Addressmgmt\Service\AddressLocatorService
-     * @inject
      */
     protected $addressService = NULL;
 
@@ -77,11 +81,11 @@ class CouchController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
             $this->arguments['newCouch']
             ->getPropertyMappingConfiguration()
             ->forProperty('begin')
-            ->setTypeConverterOption('TYPO3\\CMS\\Extbase\\Property\\TypeConverter\\DateTimeConverter', \TYPO3\CMS\Extbase\Property\TypeConverter\DateTimeConverter::CONFIGURATION_DATE_FORMAT, 'Y/m/d H:i');
+            ->setTypeConverterOption('TYPO3\\CMS\\Extbase\\Property\\TypeConverter\\DateTimeConverter', DateTimeConverter::CONFIGURATION_DATE_FORMAT, 'Y/m/d H:i');
             $this->arguments['newCouch']
             ->getPropertyMappingConfiguration()
             ->forProperty('end')
-            ->setTypeConverterOption('TYPO3\\CMS\\Extbase\\Property\\TypeConverter\\DateTimeConverter', \TYPO3\CMS\Extbase\Property\TypeConverter\DateTimeConverter::CONFIGURATION_DATE_FORMAT, 'Y/m/d H:i');
+            ->setTypeConverterOption('TYPO3\\CMS\\Extbase\\Property\\TypeConverter\\DateTimeConverter', DateTimeConverter::CONFIGURATION_DATE_FORMAT, 'Y/m/d H:i');
             $this->arguments['newCouch']->getPropertyMappingConfiguration()->forProperty('address')->allowProperties('zip');
 
 
@@ -93,11 +97,11 @@ class CouchController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
             $this->arguments['couch']
             ->getPropertyMappingConfiguration()
             ->forProperty('begin')
-            ->setTypeConverterOption('TYPO3\\CMS\\Extbase\\Property\\TypeConverter\\DateTimeConverter', \TYPO3\CMS\Extbase\Property\TypeConverter\DateTimeConverter::CONFIGURATION_DATE_FORMAT, 'Y/m/d H:i');
+            ->setTypeConverterOption('TYPO3\\CMS\\Extbase\\Property\\TypeConverter\\DateTimeConverter', DateTimeConverter::CONFIGURATION_DATE_FORMAT, 'Y/m/d H:i');
             $this->arguments['couch']
             ->getPropertyMappingConfiguration()
             ->forProperty('end')
-            ->setTypeConverterOption('TYPO3\\CMS\\Extbase\\Property\\TypeConverter\\DateTimeConverter', \TYPO3\CMS\Extbase\Property\TypeConverter\DateTimeConverter::CONFIGURATION_DATE_FORMAT, 'Y/m/d H:i');
+            ->setTypeConverterOption('TYPO3\\CMS\\Extbase\\Property\\TypeConverter\\DateTimeConverter', DateTimeConverter::CONFIGURATION_DATE_FORMAT, 'Y/m/d H:i');
             $this->arguments['couch']->getPropertyMappingConfiguration()->forProperty('address')->allowProperties('zip');
         }
     }
@@ -147,7 +151,7 @@ class CouchController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
      * @param \Eike\Couch\Domain\Model\Couch $couch
      * @return void
      */
-    public function showAction(\Eike\Couch\Domain\Model\Couch $couch)
+    public function showAction(Couch $couch)
     {
         $this->view->assign('couch', $couch);
     }
@@ -175,10 +179,10 @@ class CouchController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
      * @param \Eike\Couch\Domain\Model\Couch $newCouch
      * @return void
      */
-    public function createAction(\Eike\Couch\Domain\Model\Couch $newCouch)
+    public function createAction(Couch $newCouch)
     {
 
-    	$this->addFlashMessage(\TYPO3\CMS\Extbase\Utility\LocalizationUtility::translate('flashMessage.newCouch','couch'), '', \TYPO3\CMS\Core\Messaging\AbstractMessage::OK);
+    	$this->addFlashMessage(\TYPO3\CMS\Extbase\Utility\LocalizationUtility::translate('flashMessage.newCouch','couch'), '', AbstractMessage::OK);
     	$this->addressService->updateCoordinates($newCouch->getAddress());
         $this->couchRepository->add($newCouch);
         $this->flushCachesByExtKeyTag();
@@ -194,10 +198,10 @@ class CouchController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
      * action edit
      *
      * @param \Eike\Couch\Domain\Model\Couch $couch
-     * @ignorevalidation $couch
      * @return void
+     * @Extbase\IgnoreValidation("couch")
      */
-    public function editAction(\Eike\Couch\Domain\Model\Couch $couch)
+    public function editAction(Couch $couch)
     {
     	if(!$this->access->mayEditOrDelete($couch, $this->access->getLoggedInFrontendUser())){
     		throw new InsufficientUserPermissionsException('You are not allowed to edit this couch',1466260533);
@@ -213,9 +217,9 @@ class CouchController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
      * @param \Eike\Couch\Domain\Model\Couch $couch
      * @return void
      */
-    public function updateAction(\Eike\Couch\Domain\Model\Couch $couch)
+    public function updateAction(Couch $couch)
     {
-        $this->addFlashMessage(\TYPO3\CMS\Extbase\Utility\LocalizationUtility::translate('flashMessage.updateCouch','couch'), '', \TYPO3\CMS\Core\Messaging\AbstractMessage::OK);
+        $this->addFlashMessage(\TYPO3\CMS\Extbase\Utility\LocalizationUtility::translate('flashMessage.updateCouch','couch'), '', AbstractMessage::OK);
         $this->addressService->updateCoordinates($couch->getAddress());
         $this->couchRepository->update($couch);
         $this->flushCachesByExtKeyTag();
@@ -228,12 +232,12 @@ class CouchController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
      * @param \Eike\Couch\Domain\Model\Couch $couch
      * @return void
      */
-    public function deleteAction(\Eike\Couch\Domain\Model\Couch $couch)
+    public function deleteAction(Couch $couch)
     {
     	if(!$this->access->mayEditOrDelete($couch, $this->access->getLoggedInFrontendUser())){
     		throw new InsufficientUserPermissionsException('You are not allowed to delete this couch',1466260675);
     	}
-        $this->addFlashMessage(\TYPO3\CMS\Extbase\Utility\LocalizationUtility::translate('flashMessage.deleteCouch','couch'), '', \TYPO3\CMS\Core\Messaging\AbstractMessage::OK);
+        $this->addFlashMessage(\TYPO3\CMS\Extbase\Utility\LocalizationUtility::translate('flashMessage.deleteCouch','couch'), '', AbstractMessage::OK);
         $this->couchRepository->remove($couch);
         $this->flushCachesByExtKeyTag();
         $this->redirect('list');
@@ -251,6 +255,31 @@ class CouchController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
     protected function getErrorFlashMessage() {
         #DebuggerUtility::var_dump($this->controllerContext->getArguments()->getValidationResults()->getFlattenedErrors());
         return FALSE;
+    }
+
+    public function injectCouchRepository(CouchRepository $couchRepository): void
+    {
+        $this->couchRepository = $couchRepository;
+    }
+
+    public function injectAddressRepository(AddressRepository $addressRepository): void
+    {
+        $this->addressRepository = $addressRepository;
+    }
+
+    public function injectAccess(Access $access): void
+    {
+        $this->access = $access;
+    }
+
+    public function injectCategoryRepository(CategoryRepository $categoryRepository): void
+    {
+        $this->categoryRepository = $categoryRepository;
+    }
+
+    public function injectAddressService(AddressLocatorService $addressService): void
+    {
+        $this->addressService = $addressService;
     }
 
 }

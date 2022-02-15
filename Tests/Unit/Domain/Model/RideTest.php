@@ -2,6 +2,11 @@
 
 namespace Eike\Couch\Tests\Unit\Domain\Model;
 
+use TYPO3\TestingFramework\Core\Unit\UnitTestCase;
+use Eike\Couch\Domain\Model\Couch;
+use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
+use In2\Femanager\Domain\Model\User;
+use Undkonsorten\Addressmgmt\Domain\Model\Address\Location;
 /***************************************************************
  *  Copyright notice
  *
@@ -25,7 +30,6 @@ namespace Eike\Couch\Tests\Unit\Domain\Model;
  *
  *  This copyright notice MUST APPEAR in all copies of the script!
  ***************************************************************/
-
 /**
  * Test case for class \Eike\Couch\Domain\Model\Couch.
  *
@@ -34,7 +38,7 @@ namespace Eike\Couch\Tests\Unit\Domain\Model;
  *
  * @author Eike Starkmann <eike.starkmann@posteo.de>
  */
-class CouchTest extends \TYPO3\CMS\Core\Tests\UnitTestCase
+class CouchTest extends UnitTestCase
 {
 	/**
 	 * @var \Eike\Couch\Domain\Model\Couch
@@ -43,7 +47,7 @@ class CouchTest extends \TYPO3\CMS\Core\Tests\UnitTestCase
 
 	public function setUp()
 	{
-		$this->subject = new \Eike\Couch\Domain\Model\Couch();
+		$this->subject = new Couch();
 	}
 
 	public function tearDown()
@@ -155,7 +159,7 @@ class CouchTest extends \TYPO3\CMS\Core\Tests\UnitTestCase
 	 */
 	public function setReturningForCouchSetsReturning()
 	{
-		$returningFixture = new \Eike\Couch\Domain\Model\Couch();
+		$returningFixture = new Couch();
 		$this->subject->setReturning($returningFixture);
 
 		$this->assertAttributeEquals(
@@ -170,7 +174,7 @@ class CouchTest extends \TYPO3\CMS\Core\Tests\UnitTestCase
 	 */
 	public function getProviderReturnsInitialValueForFeUser()
 	{
-		$newObjectStorage = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
+		$newObjectStorage = new ObjectStorage();
 		$this->assertEquals(
 			$newObjectStorage,
 			$this->subject->getProvider()
@@ -182,8 +186,8 @@ class CouchTest extends \TYPO3\CMS\Core\Tests\UnitTestCase
 	 */
 	public function setProviderForObjectStorageContainingFeUserSetsProvider()
 	{
-		$provider = new \In2\Femanager\Domain\Model\User();
-		$objectStorageHoldingExactlyOneProvider = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
+		$provider = new User();
+		$objectStorageHoldingExactlyOneProvider = new ObjectStorage();
 		$objectStorageHoldingExactlyOneProvider->attach($provider);
 		$this->subject->setProvider($objectStorageHoldingExactlyOneProvider);
 
@@ -199,7 +203,7 @@ class CouchTest extends \TYPO3\CMS\Core\Tests\UnitTestCase
 	 */
 	public function addProviderToObjectStorageHoldingProvider()
 	{
-		$provider = new \In2\Femanager\Domain\Model\User();
+		$provider = new User();
 		$providerObjectStorageMock = $this->getMock('TYPO3\\CMS\\Extbase\\Persistence\\ObjectStorage', array('attach'), array(), '', FALSE);
 		$providerObjectStorageMock->expects($this->once())->method('attach')->with($this->equalTo($provider));
 		$this->inject($this->subject, 'provider', $providerObjectStorageMock);
@@ -212,7 +216,7 @@ class CouchTest extends \TYPO3\CMS\Core\Tests\UnitTestCase
 	 */
 	public function removeProviderFromObjectStorageHoldingProvider()
 	{
-		$provider = new \In2\Femanager\Domain\Model\User();
+		$provider = new User();
 		$providerObjectStorageMock = $this->getMock('TYPO3\\CMS\\Extbase\\Persistence\\ObjectStorage', array('detach'), array(), '', FALSE);
 		$providerObjectStorageMock->expects($this->once())->method('detach')->with($this->equalTo($provider));
 		$this->inject($this->subject, 'provider', $providerObjectStorageMock);
@@ -237,7 +241,7 @@ class CouchTest extends \TYPO3\CMS\Core\Tests\UnitTestCase
 	 */
 	public function setDestinationForAddressSetsDestination()
 	{
-		$destinationFixture = new \Undkonsorten\Addressmgmt\Domain\Model\Address\Location();
+		$destinationFixture = new Location();
 		$this->subject->setDestination($destinationFixture);
 
 		$this->assertAttributeEquals(
@@ -263,7 +267,7 @@ class CouchTest extends \TYPO3\CMS\Core\Tests\UnitTestCase
 	 */
 	public function setStartForAddressSetsStart()
 	{
-		$startFixture = new \Undkonsorten\Addressmgmt\Domain\Model\Address\Location();
+		$startFixture = new Location();
 		$this->subject->setStart($startFixture);
 
 		$this->assertAttributeEquals(

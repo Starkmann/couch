@@ -2,84 +2,85 @@
     <meta type="array">
         <langDisable type="integer">1</langDisable>
     </meta>
-	<sheets>
-		<sDEF>
-			<ROOT>
-				<TCEforms>
-					<sheetTitle>Function</sheetTitle>
-				</TCEforms>
-				<type>array</type>
-				<el>
-					<switchableControllerActions>
-						<TCEforms>
-							<onChange>reload</onChange>
-							<label>Select function</label>
-							<config>
-								<type>select</type>
-								<items>
-									<numIndex index="0">
-										<numIndex index="0">List</numIndex>
-										<numIndex index="1">Couch->list;Couch->show;Couch->new;Couch->create;Couch->edit;Couch->update;Couch->delete</numIndex>
-									</numIndex>
-									<numIndex index="1">
-										<numIndex index="0">Show</numIndex>
-										<numIndex index="1">Couch->show;Couch->new;Couch->create;Couch->edit;Couch->update;Couch->delete</numIndex>
-									</numIndex>
-									<numIndex index="2">
-										<numIndex index="0">Create</numIndex>
-										<numIndex index="1">Couch->new;Couch->create</numIndex>
-									</numIndex>
-								</items>
-							</config>
-						</TCEforms>
-					</switchableControllerActions>
-					<settings.category>
-						<TCEforms>
-							<label>Category</label>
-							<config>
-							  <type>select</type>
-							  <autoSizeMax>50</autoSizeMax>
-							  <renderMode>tree</renderMode>
-							  <foreign_table_where> AND sys_category.sys_language_uid IN (-1, 0) ORDER BY sys_category.title ASC</foreign_table_where>
-							  <maxitems>9999</maxitems>
-							  <size>10</size>
-							  <renderType>selectTree</renderType>
-							  <treeConfig>
-								<parentField>parent</parentField>
-								<appearance>
-									<expandAll>1</expandAll>
-									<showHeader>1</showHeader>
-								</appearance>
-							  </treeConfig>
-							  <foreign_table>sys_category</foreign_table>
-							</config>
-						</TCEforms>
-					</settings.category>
-					<settings.registrationPid>
-						<TCEforms>
-							<label>Registrierung</label>
-							<config>
-							  <type>group</type>
-							  <internal_type>db</internal_type>
-							  <allowed>pages</allowed>
-							</config>
-						</TCEforms>
-					</settings.registrationPid>
-                    <settings.listPage>
+    <sheets>
+        <sDEF>
+            <ROOT>
+                <TCEforms>
+                    <sheetTitle>Function</sheetTitle>
+                </TCEforms>
+                <type>array</type>
+                <el>
+                    <switchableControllerActions>
                         <TCEforms>
-                            <label>List page</label>
-							<displayCond>FIELD:switchableControllerActions:=:Couch->new;Couch->create</displayCond>
+                            <onChange>reload</onChange>
+                            <label>Select function</label>
+                            <config>
+                                <type>select</type>
+                                <renderType>selectSingle</renderType>
+                                <items>
+                                    <numIndex index="0">
+                                        <numIndex index="0">List</numIndex>
+                                        <numIndex index="1">Couch->list;Couch->show;Couch->new;Couch->create;Couch->edit;Couch->update;Couch->delete</numIndex>
+                                    </numIndex>
+                                    <numIndex index="1">
+                                        <numIndex index="0">Show</numIndex>
+                                        <numIndex index="1">Couch->show;Couch->new;Couch->create;Couch->edit;Couch->update;Couch->delete</numIndex>
+                                    </numIndex>
+                                    <numIndex index="2">
+                                        <numIndex index="0">Create</numIndex>
+                                        <numIndex index="1">Couch->new;Couch->create</numIndex>
+                                    </numIndex>
+                                </items>
+                            </config>
+                        </TCEforms>
+                    </switchableControllerActions>
+                    <settings.category>
+                        <TCEforms>
+                            <label>Category</label>
+                            <config>
+                                <type>select</type>
+                                <autoSizeMax>50</autoSizeMax>
+                                <renderMode>tree</renderMode>
+                                <foreign_table_where> AND sys_category.sys_language_uid IN (-1, 0) ORDER BY sys_category.title ASC</foreign_table_where>
+                                <maxitems>9999</maxitems>
+                                <size>10</size>
+                                <renderType>selectTree</renderType>
+                                <treeConfig>
+                                    <parentField>parent</parentField>
+                                    <appearance>
+                                        <expandAll>1</expandAll>
+                                        <showHeader>1</showHeader>
+                                    </appearance>
+                                </treeConfig>
+                                <foreign_table>sys_category</foreign_table>
+                            </config>
+                        </TCEforms>
+                    </settings.category>
+                    <settings.registrationPid>
+                        <TCEforms>
+                            <label>Registrierung</label>
                             <config>
                                 <type>group</type>
                                 <internal_type>db</internal_type>
                                 <allowed>pages</allowed>
-								<minitems>1</minitems>
-								<maxitems>1</maxitems>
+                            </config>
+                        </TCEforms>
+                    </settings.registrationPid>
+                    <settings.listPage>
+                        <TCEforms>
+                            <label>List page</label>
+                            <displayCond>FIELD:switchableControllerActions:=:Couch->new;Couch->create</displayCond>
+                            <config>
+                                <type>group</type>
+                                <internal_type>db</internal_type>
+                                <allowed>pages</allowed>
+                                <minitems>1</minitems>
+                                <maxitems>1</maxitems>
                             </config>
                         </TCEforms>
                     </settings.listPage>
-				</el>
-			</ROOT>
-		</sDEF>
-	</sheets>
+                </el>
+            </ROOT>
+        </sDEF>
+    </sheets>
 </T3DataStructure>

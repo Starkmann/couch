@@ -1,8 +1,8 @@
 <?php
 namespace Eike\Couch\ViewHelpers\Access;
 
+use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractConditionViewHelper;
 use TYPO3\CMS\Extbase\Domain\Model\FrontendUser;
-use TYPO3\CMS\Fluid\Core\ViewHelper\AbstractConditionViewHelper;
 
 /***************************************************************
  *  Copyright notice

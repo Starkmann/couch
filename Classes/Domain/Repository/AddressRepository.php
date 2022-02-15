@@ -1,6 +1,7 @@
 <?php
 namespace Eike\Couch\Domain\Repository;
 
+use TYPO3\CMS\Extbase\Persistence\Repository;
 /***************************************************************
  *
  *  Copyright notice
@@ -25,11 +26,10 @@ namespace Eike\Couch\Domain\Repository;
  *
  *  This copyright notice MUST APPEAR in all copies of the script!
  ***************************************************************/
-
 /**
  * The repository for Addresses
  */
-class AddressRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
+class AddressRepository extends Repository
 {
 
     

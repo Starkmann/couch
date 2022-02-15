@@ -2,6 +2,8 @@
 
 namespace Eike\Couch\Tests\Unit\Domain\Model;
 
+use TYPO3\TestingFramework\Core\Unit\UnitTestCase;
+use In2\Femanager\Domain\Model\User;
 /***************************************************************
  *  Copyright notice
  *
@@ -25,7 +27,6 @@ namespace Eike\Couch\Tests\Unit\Domain\Model;
  *
  *  This copyright notice MUST APPEAR in all copies of the script!
  ***************************************************************/
-
 /**
  * Test case for class \In2\Femanager\Domain\Model\User.
  *
@@ -34,7 +35,7 @@ namespace Eike\Couch\Tests\Unit\Domain\Model;
  *
  * @author Eike Starkmann <eike.starkmann@posteo.de>
  */
-class FeUserTest extends \TYPO3\CMS\Core\Tests\UnitTestCase
+class FeUserTest extends UnitTestCase
 {
 	/**
 	 * @var \In2\Femanager\Domain\Model\User
@@ -43,7 +44,7 @@ class FeUserTest extends \TYPO3\CMS\Core\Tests\UnitTestCase
 
 	public function setUp()
 	{
-		$this->subject = new \In2\Femanager\Domain\Model\User();
+		$this->subject = new User();
 	}
 
 	public function tearDown()

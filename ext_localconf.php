@@ -4,15 +4,15 @@ if (!defined('TYPO3_MODE')) {
 }
 
 \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
-	'Eike.' . $_EXTKEY,
+	'Couch',
 	'List',
 	array(
-		'Couch' => 'list, show, new, create, edit, update, delete',
+		\Eike\Couch\Controller\CouchController::class => 'list, show, new, create, edit, update, delete',
 		
 	),
 	// non-cacheable actions
 	array(
-		'Couch' => 'new, create, delete, update',
+		\Eike\Couch\Controller\CouchController::class => 'new, create, delete, update',
 		
 	)
 );

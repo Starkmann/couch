@@ -1,5 +1,6 @@
 <?php
 namespace Eike\Couch\Domain\Repository;
+use Undkonsorten\Addressmgmt\Domain\Repository\AddressRepository;
 use TYPO3\CMS\Extbase\Persistence\QueryInterface;
 
 /***************************************************************
@@ -30,7 +31,7 @@ use TYPO3\CMS\Extbase\Persistence\QueryInterface;
 /**
  * The repository for Couchs
  */
-class CouchRepository extends \Undkonsorten\Addressmgmt\Domain\Repository\AddressRepository
+class CouchRepository extends AddressRepository
 {
 
     protected $defaultOrderings = array(

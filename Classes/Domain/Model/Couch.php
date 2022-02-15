@@ -2,6 +2,9 @@
 namespace Eike\Couch\Domain\Model;
 
 
+use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
+use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
+use Undkonsorten\Addressmgmt\Domain\Model\Address\Location;
 use TYPO3\CMS\Extbase\Domain\Model\FrontendUser;
 
 /***************************************************************
@@ -32,7 +35,7 @@ use TYPO3\CMS\Extbase\Domain\Model\FrontendUser;
 /**
  * A couch
  */
-class Couch extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
+class Couch extends AbstractEntity
 {
 
     /**
@@ -165,7 +168,7 @@ class Couch extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
      */
     protected function initStorageObjects()
     {
-        $this->provider = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
+        $this->provider = new ObjectStorage();
     }
     
     /**
@@ -207,7 +210,7 @@ class Couch extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
      * @param \Undkonsorten\Addressmgmt\Domain\Model\Address\Location $address
      * @return void
      */
-    public function setAddress(\Undkonsorten\Addressmgmt\Domain\Model\Address\Location $address)
+    public function setAddress(Location $address)
     {
         $this->address = $address;
     }
@@ -250,7 +253,7 @@ class Couch extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
 	 * @param \Eike\Couch\Domain\Model\Category $category
 	 * @return void
 	 */
-	public function addCategory(\Eike\Couch\Domain\Model\Category $category)
+	public function addCategory(Category $category)
 	{
 	    $this->categories->attach($category);
 	}
@@ -261,7 +264,7 @@ class Couch extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
 	 * @param \Eike\Couch\Domain\Model\Category $categoryToRemove The Category to be removed
 	 * @return void
 	 */
-	public function removeCategory(\Eike\Couch\Domain\Model\Category $categoryToRemove)
+	public function removeCategory(Category $categoryToRemove)
 	{
 	    $this->categories->detach($categoryToRemove);
 	}
@@ -282,7 +285,7 @@ class Couch extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
 	 * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Eike\Couch\Domain\Model\Category> $categories
 	 * @return void
 	 */
-	public function setCategories(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $categories)
+	public function setCategories(ObjectStorage $categories)
 	{
 	    $this->categories = $categories;
 	}

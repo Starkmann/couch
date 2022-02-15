@@ -1,23 +1,31 @@
 {
     "name": "eike/couch",
     "description": "Manages couchs",
+    "license": "GPL-2.0-or-later",
     "type": "typo3-cms-extension",
     "replace": {
-        "couch": "self.version" 
+        "couch": "self.version"
     },
     "require": {
-        "typo3/cms-core": "^8.7",
-		"undkonsorten/addressmgmt":"^3.1"
+        "typo3/cms-core": "^10.4",
+        "undkonsorten/addressmgmt": "^5.0"
     },
     "autoload": {
         "psr-4": {
-            "Eike\\Couch\\": "Classes" 
+            "Eike\\Couch\\": "Classes"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Eike\\Couch\\Tests": "Tests/" 
+            "Eike\\Couch\\Tests": "Tests/"
         }
+    },
+    "extra": {
+        "typo3/cms": {
+            "extension-key": "couch"
+        }
+    },
+    "suggest": {
+        "in2code/femanager": "^6.1"
     }
 }
-

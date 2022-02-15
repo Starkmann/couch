@@ -1,5 +1,8 @@
 <?php
 namespace Eike\Couch\Tests\Unit\Controller;
+
+use TYPO3\TestingFramework\Core\Unit\UnitTestCase;
+use Eike\Couch\Domain\Model\Couch;
 /***************************************************************
  *  Copyright notice
  *
@@ -23,13 +26,12 @@ namespace Eike\Couch\Tests\Unit\Controller;
  *
  *  This copyright notice MUST APPEAR in all copies of the script!
  ***************************************************************/
-
 /**
  * Test case for class Eike\Couch\Controller\CouchController.
  *
  * @author Eike Starkmann <eike.starkmann@posteo.de>
  */
-class CouchControllerTest extends \TYPO3\CMS\Core\Tests\UnitTestCase
+class CouchControllerTest extends UnitTestCase
 {
 
 	/**
@@ -71,7 +73,7 @@ class CouchControllerTest extends \TYPO3\CMS\Core\Tests\UnitTestCase
 	 */
 	public function showActionAssignsTheGivenCouchToView()
 	{
-		$couch = new \Eike\Couch\Domain\Model\Couch();
+		$couch = new Couch();
 
 		$view = $this->getMock('TYPO3\\CMS\\Extbase\\Mvc\\View\\ViewInterface');
 		$this->inject($this->subject, 'view', $view);
@@ -85,7 +87,7 @@ class CouchControllerTest extends \TYPO3\CMS\Core\Tests\UnitTestCase
 	 */
 	public function createActionAddsTheGivenCouchToCouchRepository()
 	{
-		$couch = new \Eike\Couch\Domain\Model\Couch();
+		$couch = new Couch();
 
 		$couchRepository = $this->getMock('Eike\\Couch\\Domain\\Repository\\CouchRepository', array('add'), array(), '', FALSE);
 		$couchRepository->expects($this->once())->method('add')->with($couch);
@@ -99,7 +101,7 @@ class CouchControllerTest extends \TYPO3\CMS\Core\Tests\UnitTestCase
 	 */
 	public function editActionAssignsTheGivenCouchToView()
 	{
-		$couch = new \Eike\Couch\Domain\Model\Couch();
+		$couch = new Couch();
 
 		$view = $this->getMock('TYPO3\\CMS\\Extbase\\Mvc\\View\\ViewInterface');
 		$this->inject($this->subject, 'view', $view);
@@ -113,7 +115,7 @@ class CouchControllerTest extends \TYPO3\CMS\Core\Tests\UnitTestCase
 	 */
 	public function updateActionUpdatesTheGivenCouchInCouchRepository()
 	{
-		$couch = new \Eike\Couch\Domain\Model\Couch();
+		$couch = new Couch();
 
 		$couchRepository = $this->getMock('Eike\\Couch\\Domain\\Repository\\CouchRepository', array('update'), array(), '', FALSE);
 		$couchRepository->expects($this->once())->method('update')->with($couch);
@@ -127,7 +129,7 @@ class CouchControllerTest extends \TYPO3\CMS\Core\Tests\UnitTestCase
 	 */
 	public function deleteActionRemovesTheGivenCouchFromCouchRepository()
 	{
-		$couch = new \Eike\Couch\Domain\Model\Couch();
+		$couch = new Couch();
 
 		$couchRepository = $this->getMock('Eike\\Couch\\Domain\\Repository\\CouchRepository', array('remove'), array(), '', FALSE);
 		$couchRepository->expects($this->once())->method('remove')->with($couch);
