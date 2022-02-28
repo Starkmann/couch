@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="fr" datatype="plaintext" original="messages" date="2022-02-28T13:25:21Z" product-name="couch">
+		<header/>
+		<body>
+			<trans-unit id="tx_couch_domain_model_couch">
+				<source>Offre</source>
+			</trans-unit>
+			<trans-unit id="tx_couch_domain_model_couch.description">
+				<source>Description</source>
+			</trans-unit>
+			<trans-unit id="tx_couch_domain_model_couch.begin">
+				<source>Place /lieu de recontre</source>
+			</trans-unit>
+            <trans-unit id="tx_couch_domain_model_couch.end">
+				<source>route</source>
+			</trans-unit>
+			<trans-unit id="tx_couch_domain_model_couch.space">
+				<source>Nombre de personnes possible</source>
+			</trans-unit>
+			<trans-unit id="tx_couch_domain_model_couch.route">
+				<source>Route</source>
+			</trans-unit>
+			<trans-unit id="tx_couch_domain_model_couch.returning">
+				<source>Returning</source>
+			</trans-unit>
+			<trans-unit id="tx_couch_domain_model_couch.provider">
+				<source>Fahrer_in</source>
+			</trans-unit>
+			<trans-unit id="tx_couch_domain_model_couch.destination">
+				<source>Ziel</source>
+			</trans-unit>
+			<trans-unit id="tx_couch_domain_model_couch.start">
+				<source>Start</source>
+			</trans-unit>
+			<trans-unit id="tx_couch_domain_model_feuser">
+				<source>Fe User</source>
+			</trans-unit>
+			<trans-unit id="tx_couch_domain_model_address">
+				<source>Adress</source>
+			</trans-unit>
+			<trans-unit id="tx_couch_domain_model_address.name">
+				<source>Nom</source>
+			</trans-unit>
+			<trans-unit id="tx_couch_domain_model_address.street">
+				<source>Rue</source>
+			</trans-unit>
+			<trans-unit id="tx_couch_domain_model_address.street_number">
+				<source>numéro</source>
+			</trans-unit>
+			<trans-unit id="tx_couch_domain_model_address.city">
+				<source>lieu</source>
+			</trans-unit>
+			<trans-unit id="tx_couch_domain_model_address.zip">
+				<source>Code postal</source>
+			</trans-unit>
+			<trans-unit id="tx_couch_domain_model_address.country">
+				<source>pays</source>
+			</trans-unit>
+			<trans-unit id="tx_couch_domain_model_address.state">
+				<source>département</source>
+			</trans-unit>
+			<trans-unit id="tx_couch_domain_model_address.latitude">
+				<source>Latitude</source>
+			</trans-unit>
+			<trans-unit id="tx_couch_domain_model_address.longitude">
+				<source>Longitude</source>
+			</trans-unit>
+
+			<trans-unit id="flashMessage.newCouch">
+				<source>nouvelle entrée a été créée.</source>
+			</trans-unit>
+			<trans-unit id="flashMessage.updateCouch">
+				<source>l'entrée a été mise à jour.</source>
+			</trans-unit>
+			<trans-unit id="flashMessage.deleteCouch">
+				<source>l'entrée a été supprimée.</source>
+			</trans-unit>
+
+		</body>
+	</file>
+</xliff>
