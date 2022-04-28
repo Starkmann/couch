@@ -13,7 +13,6 @@ in /Configuration/ExtensionBuilder/settings.yaml:
 Otherwise your changes will be overwritten the next time you save the extension in the extension builder
 
 <f:section name="main">
-<h1>Sleeping palces</h1>
 
 <f:flashMessages />
 	<f:render partial="Map/Show" arguments="{couchs:couchs, contentUid:contentUid}"/>
@@ -72,7 +71,7 @@ Otherwise your changes will be overwritten the next time you save the extension 
 	</f:then>
 	<f:else>
 		<f:if condition="{settings.registrationPid}">
-			<f:link.page pageUid="{settings.registrationPid}"><span class="btn"><f:translate key="tx_couch_domain_model_couch.havetoregister" /></span></f:link.page>
+			<f:link.page pageUid="{settings.registrationPid}"><span class="btn"><f:translate key="tx_couch_domain_model.havetoregister" /></span></f:link.page>
 		</f:if>
 	</f:else>
 </f:if>

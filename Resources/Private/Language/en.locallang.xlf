@@ -1,83 +1,107 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.0">
-	<file source-language="en" datatype="plaintext" original="messages" date="2016-06-06T13:25:21Z" product-name="couch">
+	<file source-language="de" target-language="en" datatype="plaintext" original="messages" date="2016-06-06T13:25:21Z" product-name="couch">
 		<header/>
 		<body>
 			<trans-unit id="tx_couch_domain_model_couch">
-				<source>Offer</source>
+				<source>Angebot</source>
+				<target state="translated">Offer</target>
 			</trans-unit>
 			<trans-unit id="tx_couch_domain_model_couch.description">
-				<source>Description</source>
+				<source>Beschreibung</source>
+				<target state="translated">Description</target>
 			</trans-unit>
 			<trans-unit id="tx_couch_domain_model_couch.begin">
-				<source>From</source>
+				<source>von</source>
+				<target state="translated">From</target>
 			</trans-unit>
             <trans-unit id="tx_couch_domain_model_couch.end">
-				<source>To</source>
+				<source>nach</source>
+				<target state="translated">To</target>
 			</trans-unit>
 			<trans-unit id="tx_couch_domain_model_couch.space">
-				<source>Number of possible people</source>
+				<source>Mögliche Personenzahl</source>
+				<target state="translated">Number of possible people</target>
 			</trans-unit>
 			<trans-unit id="tx_couch_domain_model_couch.route">
 				<source>Route</source>
+				<target state="translated">Route</target>
 			</trans-unit>
 			<trans-unit id="tx_couch_domain_model_couch.returning">
-				<source>Returning</source>
+				<source>Zurück</source>
+				<target state="translated">Returning</target>
 			</trans-unit>
 			<trans-unit id="tx_couch_domain_model_couch.provider">
 				<source>Fahrer_in</source>
+				<target state="translated">Fahrer_in</target>
 			</trans-unit>
 			<trans-unit id="tx_couch_domain_model_couch.destination">
-				<source>Destination</source>
+				<source>Ziel</source>
+				<target state="translated">Destination</target>
 			</trans-unit>
 			<trans-unit id="tx_couch_domain_model_couch.start">
 				<source>Start</source>
+				<target state="translated">Start</target>
 			</trans-unit>
 			<trans-unit id="tx_couch_domain_model_feuser">
 				<source>Fe User</source>
+				<target state="translated">Fe User</target>
 			</trans-unit>
 			<trans-unit id="tx_couch_domain_model_address">
-				<source>Adress</source>
+				<source>Adresse</source>
+				<target state="translated">Adress</target>
 			</trans-unit>
 			<trans-unit id="tx_couch_domain_model_address.name">
 				<source>Name</source>
+				<target state="translated">Name</target>
 			</trans-unit>
 			<trans-unit id="tx_couch_domain_model_address.street">
-				<source>Street</source>
+				<source>Straße</source>
+				<target state="translated">Street</target>
 			</trans-unit>
 			<trans-unit id="tx_couch_domain_model_address.street_number">
-				<source>Number</source>
+				<source>Hausnummer</source>
+				<target state="translated">Number</target>
 			</trans-unit>
 			<trans-unit id="tx_couch_domain_model_address.city">
-				<source>Venue</source>
+				<source>Ort</source>
+				<target state="translated">Venue</target>
 			</trans-unit>
 			<trans-unit id="tx_couch_domain_model_address.zip">
-				<source>ZIP</source>
+				<source>PLZ</source>
+				<target state="translated">ZIP</target>
 			</trans-unit>
 			<trans-unit id="tx_couch_domain_model_address.country">
-				<source>Country</source>
+				<source>Land</source>
+				<target state="translated">Country</target>
 			</trans-unit>
 			<trans-unit id="tx_couch_domain_model_address.state">
-				<source>State</source>
+				<source>Bundesland</source>
+				<target state="translated">State</target>
 			</trans-unit>
 			<trans-unit id="tx_couch_domain_model_address.latitude">
 				<source>Latitude</source>
+				<target state="translated">Latitude</target>
 			</trans-unit>
 			<trans-unit id="tx_couch_domain_model_address.longitude">
 				<source>Longitude</source>
+				<target state="translated">Longitude</target>
 			</trans-unit>
-
 			<trans-unit id="flashMessage.newCouch">
-				<source>New entry has been made.</source>
+				<source>Neuer Eintrag wurde erstellt.</source>
+				<target state="translated">New entry has been made.</target>
 			</trans-unit>
 			<trans-unit id="flashMessage.updateCouch">
-				<source>The entry has been updated.</source>
+				<source>Der Eintrag wurde aktualisiert.</source>
+				<target state="translated">The entry has been updated.</target>
 			</trans-unit>
 			<trans-unit id="flashMessage.deleteCouch">
-				<source>The entry has been erased.</source>
+				<source>Der Eintrag wurde gelöscht.</source>
+				<target state="translated">The entry has been erased.</target>
 			</trans-unit>
-			<trans-unit id="tx_couch_domain_model_couch.havetoregister">
-				<source>Register to create an entry</source>
+			<trans-unit id="tx_couch_domain_model.havetoregister">
+				<source>Registrieren um einen Eintrag zu erstellen</source.>
+				<target state="translated">Register to create an entry</target>
 			</trans-unit>
 
 		</body>

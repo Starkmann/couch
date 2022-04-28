@@ -10,10 +10,10 @@
 				<source>Beschreibung</source>
 			</trans-unit>
 			<trans-unit id="tx_couch_domain_model_couch.begin">
-				<source>From</source>
+				<source>von</source>
 			</trans-unit>
             <trans-unit id="tx_couch_domain_model_couch.end">
-				<source>To</source>
+				<source>nach</source>
 			</trans-unit>
 			<trans-unit id="tx_couch_domain_model_couch.space">
 				<source>Mögliche Personenzahl</source>
@@ -22,7 +22,7 @@
 				<source>Route</source>
 			</trans-unit>
 			<trans-unit id="tx_couch_domain_model_couch.returning">
-				<source>Returning</source>
+				<source>Zurück</source>
 			</trans-unit>
 			<trans-unit id="tx_couch_domain_model_couch.provider">
 				<source>Fahrer_in</source>
@@ -76,7 +76,7 @@
 			<trans-unit id="flashMessage.deleteCouch">
 				<source>Der Eintrag wurde gelöscht.</source>
 			</trans-unit>
-			<trans-unit id="tx_couch_domain_model_couch.havetoregister">
+			<trans-unit id="tx_couch_domain_model.havetoregister">
 				<source>Registrieren um einen Eintrag zu erstellen</source>
 			</trans-unit>
 

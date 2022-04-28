@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.0">
-	<file source-language="fr" datatype="plaintext" original="messages" date="2022-02-28T13:25:21Z" product-name="couch">
+	<file source-language="de" target-language="fr" datatype="plaintext" original="messages" date="2022-02-28T13:25:21Z" product-name="couch">
 		<header/>
 		<body>
 			<trans-unit id="tx_couch_domain_model_couch">
@@ -76,7 +76,7 @@
 			<trans-unit id="flashMessage.deleteCouch">
 				<source>l'entrée a été supprimée.</source>
 			</trans-unit>
-			<trans-unit id="tx_couch_domain_model_couch.havetoregister">
+			<trans-unit id="tx_couch_domain_model.havetoregister">
 				<source>Inscrivez-vous pour créer une entrée</source>
 			</trans-unit>
 

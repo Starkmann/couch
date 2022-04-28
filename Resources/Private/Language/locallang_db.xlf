@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.0">
-	<file source-language="en" datatype="plaintext" original="messages" date="2016-06-06T13:25:21Z" product-name="couch">
+	<file source-language="de" datatype="plaintext" original="messages" date="2016-06-06T13:25:21Z" product-name="couch">
 		<header/>
 		<body>
 			<trans-unit id="tx_couch_domain_model_couch">
