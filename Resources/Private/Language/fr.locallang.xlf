@@ -4,81 +4,130 @@
 		<header/>
 		<body>
 			<trans-unit id="tx_couch_domain_model_couch">
-				<source>Offre</source>
+				<source>Angebot</source>
+				<target>Offre</target>
 			</trans-unit>
 			<trans-unit id="tx_couch_domain_model_couch.description">
-				<source>Description</source>
+				<source>Beschreibung</source>
+				<target>Description</target>
 			</trans-unit>
 			<trans-unit id="tx_couch_domain_model_couch.begin">
-				<source>Place /lieu de recontre</source>
+				<source>von</source>
+				<target>Place /lieu de recontre</target>
 			</trans-unit>
             <trans-unit id="tx_couch_domain_model_couch.end">
-				<source>route</source>
+				<source>nach</source>
+				<target>route</target>
 			</trans-unit>
 			<trans-unit id="tx_couch_domain_model_couch.space">
-				<source>Nombre de personnes possible</source>
+				<source>Mögliche Personenzahl</source>
+				<target>Nombre de personnes possible</target>
 			</trans-unit>
 			<trans-unit id="tx_couch_domain_model_couch.route">
 				<source>Route</source>
+				<target>Route</target>
 			</trans-unit>
 			<trans-unit id="tx_couch_domain_model_couch.returning">
-				<source>Returning</source>
+				<source>Zurück</source>
+				<target>Returning</target>
 			</trans-unit>
 			<trans-unit id="tx_couch_domain_model_couch.provider">
 				<source>Fahrer_in</source>
+				<target>Fahrer_in</target>
 			</trans-unit>
 			<trans-unit id="tx_couch_domain_model_couch.destination">
 				<source>Ziel</source>
+				<target>Ziel</target>
 			</trans-unit>
 			<trans-unit id="tx_couch_domain_model_couch.start">
 				<source>Start</source>
+				<target>Start</target>
 			</trans-unit>
 			<trans-unit id="tx_couch_domain_model_feuser">
 				<source>Fe User</source>
+				<target>Fe User</target>
 			</trans-unit>
 			<trans-unit id="tx_couch_domain_model_address">
-				<source>Adress</source>
+				<source>Adresse</source>
+				<target>Adress</target>
 			</trans-unit>
 			<trans-unit id="tx_couch_domain_model_address.name">
-				<source>Nom</source>
+				<source>Name</source>
+				<target>Nom</target>
 			</trans-unit>
 			<trans-unit id="tx_couch_domain_model_address.street">
-				<source>Rue</source>
+				<source>Straße</source>
+				<target>Rue</target>
 			</trans-unit>
 			<trans-unit id="tx_couch_domain_model_address.street_number">
-				<source>numéro</source>
+				<source>Hausnummer</source>
+				<target>numéro</target>
 			</trans-unit>
 			<trans-unit id="tx_couch_domain_model_address.city">
-				<source>lieu</source>
+				<source>Ort</source>
+				<target>lieu</target>
 			</trans-unit>
 			<trans-unit id="tx_couch_domain_model_address.zip">
-				<source>Code postal</source>
+				<source>PLZ</source>
+				<target>Code postal</target>
 			</trans-unit>
 			<trans-unit id="tx_couch_domain_model_address.country">
-				<source>pays</source>
+				<source>Land</source>
+				<target>pays</target>
 			</trans-unit>
 			<trans-unit id="tx_couch_domain_model_address.state">
-				<source>département</source>
+				<source>Bundesland</source>
+				<target>département</target>
 			</trans-unit>
 			<trans-unit id="tx_couch_domain_model_address.latitude">
 				<source>Latitude</source>
+				<target>Latitude</target>
 			</trans-unit>
 			<trans-unit id="tx_couch_domain_model_address.longitude">
 				<source>Longitude</source>
+				<target>Longitude</target>
 			</trans-unit>
 
 			<trans-unit id="flashMessage.newCouch">
-				<source>nouvelle entrée a été créée.</source>
+				<source>Neuer Eintrag wurde erstellt.</source>
+				<target>nouvelle entrée a été créée.</target>
 			</trans-unit>
 			<trans-unit id="flashMessage.updateCouch">
-				<source>l'entrée a été mise à jour.</source>
+				<source>Der Eintrag wurde aktualisiert.</source>
+				<target>l'entrée a été mise à jour.</target>
 			</trans-unit>
 			<trans-unit id="flashMessage.deleteCouch">
-				<source>l'entrée a été supprimée.</source>
+				<source>Der Eintrag wurde gelöscht.</source>
+				<target>l'entrée a été supprimée.</target>
 			</trans-unit>
 			<trans-unit id="tx_couch_domain_model.havetoregister">
-				<source>Inscrivez-vous pour créer une entrée</source>
+				<target>Inscrivez-vous pour créer une entrée</target>
 			</trans-unit>
+			<trans-unit id="tx_couch_domain_model.description">
+				<source>Beschreibung</source>
+				<target state="translated">La description</target>
+			</trans-unit>
+			<trans-unit id="tx_couch_domain_model.title">
+				<source>Titel</source>
+				<target state="translated">Titre</target>
+			</trans-unit>
+			<trans-unit id="tx_couch_domain_model.until">
+				<source>Ende</source>
+				<target state="translated">jusqu'à</target>
+			</trans-unit>
+			<trans-unit id="tx_couch_domain_model.showentry">
+				<source>Eintrag ansehen</source>
+				<target state="translated">voir l'entrée</target>
+			</trans-unit>
+			<trans-unit id="tx_couch_domain_model.createnew">
+				<source>Eintrag erstellen</source>
+				<target state="translated">Créer une entrée</target>
+			</trans-unit>
+			<trans-unit id="tx_couch_domain_model.backtolist">
+				<source>Zurück zur Liste</source>
+				<target state="translated">Retour à notre carte</target>
+			</trans-unit>
+
 
 		</body>
 	</file>

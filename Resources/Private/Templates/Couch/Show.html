@@ -19,7 +19,7 @@ Otherwise your changes will be overwritten the next time you save the extension 
 <f:render partial="Couch/Properties" arguments="{couch:couch}" />
 	<f:if condition="{feUser}">
 		<f:render partial="ButtonsEditDelete" arguments="{couch : couch, feUser:feUser}" />
-		<f:link.action action="new"><span class="btn">Neuen Eintrag erstellen</span></f:link.action>
+		<f:link.action action="new"><span class="btn"><f:translate key="tx_couch_domain_model.createnew"/></span></f:link.action>
 	</f:if>
-<f:link.action action="list"><span class="btn">Zurück zur Liste</span></f:link.action>&nbsp;
+<f:link.action action="list"><span class="btn"><f:translate key="tx_couch_domain_model.backtolist"/></span></f:link.action>&nbsp;
 </f:section>

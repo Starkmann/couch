@@ -79,6 +79,25 @@
 			<trans-unit id="tx_couch_domain_model.havetoregister">
 				<source>Registrieren um einen Eintrag zu erstellen</source>
 			</trans-unit>
+			<trans-unit id="tx_couch_domain_model.description">
+				<source>Beschreibung</source>
+			</trans-unit>
+			<trans-unit id="tx_couch_domain_model.title">
+				<source>Titel</source>
+			</trans-unit>
+			<trans-unit id="tx_couch_domain_model.until">
+				<source>Ende</source>
+			</trans-unit>
+			<trans-unit id="tx_couch_domain_model.showentry">
+				<source>Eintrag ansehen</source>
+			</trans-unit>
+			<trans-unit id="tx_couch_domain_model.createnew">
+				<source>Eintrag erstellen</source>
+			</trans-unit>
+			<trans-unit id="tx_couch_domain_model.backtolist">
+				<source>Zurück zur Liste</source>
+				
+			</trans-unit>
 
 			
 

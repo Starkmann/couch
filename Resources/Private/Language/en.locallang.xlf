@@ -100,10 +100,33 @@
 				<target state="translated">The entry has been erased.</target>
 			</trans-unit>
 			<trans-unit id="tx_couch_domain_model.havetoregister">
-				<source>Registrieren um einen Eintrag zu erstellen</source.>
+				<source>Registrieren um einen Eintrag zu erstellen</source>
 				<target state="translated">Register to create an entry</target>
 			</trans-unit>
-
+			<trans-unit id="tx_couch_domain_model.description">
+				<source>Beschreibung</source>
+				<target state="translated">Description</target>
+			</trans-unit>
+			<trans-unit id="tx_couch_domain_model.title">
+				<source>Titel</source>
+				<target state="translated">title</target>
+			</trans-unit>
+			<trans-unit id="tx_couch_domain_model.until">
+				<source>Ende</source>
+				<target state="translated">until</target>
+			</trans-unit>
+			<trans-unit id="tx_couch_domain_model.showentry">
+				<source>Eintrag ansehen</source>
+				<target state="translated">Show Entry</target>
+			</trans-unit>
+			<trans-unit id="tx_couch_domain_model.createnew">
+				<source>Eintrag erstellen</source>
+				<target state="translated">Create new entry</target>
+			</trans-unit>
+			<trans-unit id="tx_couch_domain_model.backtolist">
+				<source>Zurück zur Liste</source>
+				<target state="translated">Back to our Map</target>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>
