@@ -76,6 +76,11 @@
 			<trans-unit id="flashMessage.deleteCouch">
 				<source>Der Eintrag wurde gelöscht.</source>
 			</trans-unit>
+			<trans-unit id="tx_couch_domain_model_couch.havetoregister">
+				<source>Registrieren um einen Eintrag zu erstellen</source>
+			</trans-unit>
+
+			
 
 		</body>
 	</file>

@@ -76,6 +76,9 @@
 			<trans-unit id="flashMessage.deleteCouch">
 				<source>The entry has been erased.</source>
 			</trans-unit>
+			<trans-unit id="tx_couch_domain_model_couch.havetoregister">
+				<source>Register to create an entry</source>
+			</trans-unit>
 
 		</body>
 	</file>
