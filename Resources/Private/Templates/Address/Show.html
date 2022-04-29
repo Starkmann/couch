@@ -13,10 +13,10 @@ in /Configuration/ExtensionBuilder/settings.yaml:
 Otherwise your changes will be overwritten the next time you save the extension in the extension builder
 
 <f:section name="main">
-<h1>Single View for Address</h1>
+
 
 <f:flashMessages />
 <f:render partial="Address/Properties" arguments="{address:address}" />
-<f:link.action action="list">Back to list</f:link.action><br />
-<f:link.action action="new">New Address</f:link.action>
+<f:link.action action="list"><f:translate key="tx_couch_domain_model.backtolist" /></f:link.action><br />
+<f:link.action action="new"><f:translate key="tx_couch_domain_model.createnew" /></f:link.action>
 </f:section>
