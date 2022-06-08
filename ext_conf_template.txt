@@ -1,2 +1,5 @@
 # cat=basic;type=input; label=Uid of root couch category
-couchCategory = 
+couchCategory =
+
+# cat=basic;type=boolean; label=Show all couches without language limitations
+ignoreLanguages = false
