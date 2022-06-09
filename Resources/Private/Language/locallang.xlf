@@ -98,6 +98,18 @@
 				<source>Zurück zur Liste</source>
 				
 			</trans-unit>
+			<trans-unit id="couch.edit">
+				<source>Bearbeiten</source>
+				
+			</trans-unit>
+			<trans-unit id="couch.delete">
+				<source>Löschen</source>
+				
+			</trans-unit>
+			<trans-unit id="couch.infotext">
+				<source>Bitte die Beschreibung in englischer Sprache oder in allen drei Konferenzsprachen einstellen, damit diesen Text möglichst viele lesen können.</source>
+			</trans-unit>
+
 
 			
 

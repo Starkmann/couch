@@ -127,7 +127,18 @@
 				<source>Zurück zur Liste</source>
 				<target state="translated">Retour à notre carte</target>
 			</trans-unit>
-
+			<trans-unit id="couch.edit">
+				<source>Bearbeiten</source>
+				<target state="translated">Modifier</target>
+			</trans-unit>
+			<trans-unit id="couch.delete">
+				<source>Löschen</source>
+				<target state="translated">Supprimer une entrée</target>
+			</trans-unit>
+			<trans-unit id="couch.infotext">
+				<source>Bitte die Beschreibung in englischer Sprache oder in allen drei Konferenzsprachen einstellen, damit diesen Text möglichst viele lesen können.</source>
+				<target state="translated">Veuillez poster la description en anglais ou dans les trois langues de la conférence afin que ce texte puisse être lu par le plus grand nombre.</target>
+			</trans-unit>
 
 		</body>
 	</file>

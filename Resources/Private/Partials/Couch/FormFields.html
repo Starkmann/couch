@@ -2,7 +2,7 @@
 <div class="grid-container">
     <div class="grid-x grid-padding-x">
       <div class="medium-12 cell">
-        <label for="description"> <f:translate key="tx_couch_domain_model_couch.description" />
+        <label for="description"> <f:translate key="tx_couch_domain_model_couch.description" /><f:translate key="couch.infotext"/>
             <f:form.textarea property="description" cols="220" rows="3" />
         </label>
       </div>
@@ -15,10 +15,10 @@
         <label for="begin"><f:translate key="tx_couch_domain_model_couch.begin" />
             <f:if condition="{couch.begin}">
             <f:then>
-                <f:form.textfield property="begin" value="17.08.2022" id="datetimepicker-begin" type="text"  />
+                <f:form.textfield property="begin" value="2022/08/18" id="datetimepicker-begin" type="text"  />
             </f:then>
             <f:else>
-                <f:form.textfield property="begin" value="17.08.2022" id="datetimepicker-begin" type="text" />
+                <f:form.textfield property="begin" value="2022/08/18" id="datetimepicker-begin" type="text" />
             </f:else>
         </f:if>
         </label>
@@ -27,10 +27,10 @@
         <label for="date end"><f:translate key="tx_couch_domain_model_couch.end" />
             <f:if condition="{couch.end}">
                 <f:then>
-                    <f:form.textfield property="end" value="22.08.2022" id="datetimepicker-end" type="text"  />
+                    <f:form.textfield property="end" value="2022/08/21" id="datetimepicker-end" type="text"  />
                 </f:then>
                 <f:else>
-                    <f:form.textfield property="end" value="22.08.2022" id="datetimepicker-end" type="text" />
+                    <f:form.textfield property="end" value="2022/08/21" id="datetimepicker-end" type="text" />
                 </f:else>
             </f:if>
         </label>
