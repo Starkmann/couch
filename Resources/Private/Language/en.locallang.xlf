@@ -9,7 +9,11 @@
 			</trans-unit>
 			<trans-unit id="tx_couch_domain_model_couch.description">
 				<source>Beschreibung</source>
-				<target state="translated">Description - Please also provide contact details (e-mail or telephone) here.</target>
+				<target state="translated">Description</target>
+			</trans-unit>
+			<trans-unit id="tx_couch_domain_model_couch.description-info">
+				<source>(Bitte hier auch Kontaktdaten wie E-Mail oder Telefon angeben.)</source>
+				<target state="translated">- Please also provide contact details (e-mail or telephone) here.</target>
 			</trans-unit>
 			<trans-unit id="tx_couch_domain_model_couch.begin">
 				<source>von</source>

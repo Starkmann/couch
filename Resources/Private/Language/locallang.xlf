@@ -7,7 +7,10 @@
 				<source>Angebot</source>
 			</trans-unit>
 			<trans-unit id="tx_couch_domain_model_couch.description">
-				<source>Beschreibung (Bitte hier auch Kontaktdaten (E-Mail oder Telefon) angeben.)</source>
+				<source>Beschreibung</source>
+			</trans-unit>
+			<trans-unit id="tx_couch_domain_model_couch.description-info">
+				<source>(Bitte hier auch Kontaktdaten wie E-Mail oder Telefon angeben.)</source>
 			</trans-unit>
 			<trans-unit id="tx_couch_domain_model_couch.begin">
 				<source>von</source>

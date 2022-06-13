@@ -1,5 +1,5 @@
 
-<table class="table table-hover" >
+<table class="stack" >
 	<tr>
 		<td>
 			<f:translate key="tx_couch_domain_model_couch.description" />
@@ -32,8 +32,12 @@
 		{couch.space}
 		</td>
 	</tr>
+	<tr>
+		<td>
+			<f:translate key="tx_couch_domain_model_couch.city" />
+		</td>
+		<td>
+		{couch.address.zip} {couch.address.city}
+		</td>
+	</tr>
 </table>
-
-
-{couch.address.zip}<br>
-{couch.address.city}<br>
