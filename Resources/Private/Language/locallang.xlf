@@ -7,7 +7,7 @@
 				<source>Angebot</source>
 			</trans-unit>
 			<trans-unit id="tx_couch_domain_model_couch.description">
-				<source>Beschreibung</source>
+				<source>Beschreibung (Bitte hier auch Kontaktdaten (E-Mail oder Telefon) angeben.)</source>
 			</trans-unit>
 			<trans-unit id="tx_couch_domain_model_couch.begin">
 				<source>von</source>
@@ -43,7 +43,7 @@
 				<source>Name</source>
 			</trans-unit>
 			<trans-unit id="tx_couch_domain_model_address.street">
-				<source>Straße</source>
+				<source>Straße (Deine Adresse nutzen wir um den "Pfeil" in der Karte zu erzeugen. Die Adresse wird nicht öffentlich angezeigt. Du teilst sie später direkt der Person mit die bei Dir übernachtet.)</source>
 			</trans-unit>
 			<trans-unit id="tx_couch_domain_model_address.street_number">
 				<source>Hausnummer</source>

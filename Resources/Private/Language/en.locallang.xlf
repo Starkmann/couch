@@ -9,7 +9,7 @@
 			</trans-unit>
 			<trans-unit id="tx_couch_domain_model_couch.description">
 				<source>Beschreibung</source>
-				<target state="translated">Description</target>
+				<target state="translated">Description - Please also provide contact details (e-mail or telephone) here.</target>
 			</trans-unit>
 			<trans-unit id="tx_couch_domain_model_couch.begin">
 				<source>von</source>
@@ -57,7 +57,7 @@
 			</trans-unit>
 			<trans-unit id="tx_couch_domain_model_address.street">
 				<source>Straße</source>
-				<target state="translated">Street</target>
+				<target state="translated">Street (We use your address to create the "arrow" on the map. The address will not be shown publicly. You share it later directly with the person staying with you.)</target>
 			</trans-unit>
 			<trans-unit id="tx_couch_domain_model_address.street_number">
 				<source>Hausnummer</source>

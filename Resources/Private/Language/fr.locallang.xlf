@@ -9,7 +9,7 @@
 			</trans-unit>
 			<trans-unit id="tx_couch_domain_model_couch.description">
 				<source>Beschreibung</source>
-				<target>Description</target>
+				<target>Description - Veuillez également indiquer ici vos coordonnées (e-mail ou téléphone).</target>
 			</trans-unit>
 			<trans-unit id="tx_couch_domain_model_couch.begin">
 				<source>von</source>
@@ -57,7 +57,7 @@
 			</trans-unit>
 			<trans-unit id="tx_couch_domain_model_address.street">
 				<source>Straße</source>
-				<target>Rue</target>
+				<target>Rue (Nous utilisons ton adresse pour créer la "flèche" sur la carte. L'adresse n'est pas affichée publiquement. Tu la communiqueras plus tard directement à la personne qui séjournera chez toi.)</target>
 			</trans-unit>
 			<trans-unit id="tx_couch_domain_model_address.street_number">
 				<source>Hausnummer</source>
