@@ -13,7 +13,7 @@ plugin.tx_couch_list {
 		storagePid =
 	}
 	settings{
-    	  # cat=plugin.tx_couch_list/settings; type=string; label= Order by
+    	  # cat=plugin.tx_couch_list/settings; type=string; label= Order by e.g [begin, end, address.city, address.name]
             orderBy =
     	    # cat=plugin.tx_couch_list/settings; type=options[ASC,DESC]; label=Order direction[ascending, descending]
     	    orderDirection =
