@@ -37,10 +37,10 @@ use TYPO3\CMS\Extbase\Persistence\QueryInterface;
 class CouchRepository extends AddressRepository
 {
 
-    protected $defaultOrderings = array(
-        'address.city' => QueryInterface::ORDER_ASCENDING,
-        'begin' => QueryInterface::ORDER_ASCENDING
-    );
+    protected $defaultOrderings = [
+        'begin' => QueryInterface::ORDER_ASCENDING,
+        'address.city' => QueryInterface::ORDER_ASCENDING
+    ];
 
     public function findDemanded($addresses = NULL, $categories = NULL, $publishState = NULL, $orderings = null)
     {
